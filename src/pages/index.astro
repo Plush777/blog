@@ -1,0 +1,12 @@
+---
+import Template from '../layouts/Template.astro';
+import PostList from '../components/PostList.astro';
+import CategoryList from '../components/CategoryList.astro';
+import Wrapper from '../layouts/Wrapper.astro';
+---
+<Template>
+	<Wrapper className="blogPostList" id="blogIndex">
+		<CategoryList/>
+		<PostList/>
+	</Wrapper>
+</Template>

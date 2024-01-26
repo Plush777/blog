@@ -1,0 +1,21 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+a{text-decoration: none;}
+
+/* reset */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}
+button{background-color: transparent; cursor: pointer;}
+select{appearance: none;}
+input[type="checkbox"], input[type="radio"]{appearance: none; position:absolute;vertical-align:middle;}
+img{-webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; border: none;
+display: block; width: 100%; border-radius: 12px; user-select: none; pointer-events: none;}
+
+/* common */
+*{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+body,html{width: 100%; height: 100%; margin: 0; padding: 0; font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+font-size:16px; color: #333; letter-spacing: 0;}
+.hidden{position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}

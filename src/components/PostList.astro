@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+/* 
+1. astro에 내장되있는 getCollection 함수로 content > blog 폴더에 있는 전체 포스트 (md파일) 를 가져옵니다.
+(astro에서 제공하는 getCollection 함수는 비동기 async로 동작하기 때문에 await 키워드를 사용해야합니다.)
+2. 불러온 포스트를 sort 함수를 사용하여 오름차순으로 변경합니다.
+*/
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<section>
+    <ul class="myPostList">
+        {posts.map((post) => (
+            <li>
+                <a href={`/${post.slug}/`} class="myPostLink">
+                    <div class="myPostTop">
+                        <img class="myPostThumbnail" width={720} height={360} src={post.data.heroImage} alt="" />
+                    </div>
+
+                    <div class="myPostBottom">
+                        <h4 class="myPostTitle">{post.data.title}</h4>
+                        <p class="myPostDescription">{post.data.description}</p>
+                        <p class="myPostDate">
+                            <FormattedDate date={post.data.pubDate} />
+                        </p>
+                    </div>
+                </a>
+            </li>
+        ))}
+    </ul>
+</section>

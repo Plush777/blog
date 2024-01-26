@@ -1,0 +1,53 @@
+---
+import { SEO } from 'astro-seo';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/reset.scss';
+import '../styles/variable.scss';
+import '../styles/common.scss';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const conditionalTitle = title ? title : SITE_TITLE;
+const conditionalDescription = description ? description : SITE_DESCRIPTION;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<meta property="twitter:url" content={Astro.url} />
+
+<!-- link -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="canonical" href={canonicalURL} />
+
+<SEO
+	title={conditionalTitle}
+	description={conditionalDescription}
+	
+/>
+
+<!-- openGraph={{
+	basic: {
+		title,
+		type: "website",
+		image,
+		url: Astro.url,
+	},
+	optional: {
+		siteName: SITE_TITLE,
+		description,
+		locale: "ko",
+	},
+}}
+
+twitter={{
+	creator: "@Plush",
+	image,
+	imageAlt: title,
+	title,
+	description,
+	card: "summary_large_image",
+}} -->

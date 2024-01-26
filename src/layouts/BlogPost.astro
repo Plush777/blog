@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Template from './Template.astro';
+import Comments from '../components/Comments.astro';
+import Wrapper from './Wrapper.astro';
+
+const posts = await getCollection("blog");
+const postsTitle = posts.map((post,i) => (post.data.title));
+const postsDescription = posts.map((post) => (post.data.description));
+
+console.log(postsTitle);
+---
+<Template title={postsTitle} description={postsDescription}>
+	<Wrapper id="blogPostMain">
+		<slot/>
+		<Comments/>
+	</Wrapper>
+</Template>
+
