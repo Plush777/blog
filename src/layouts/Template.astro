@@ -1,18 +1,40 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import Wrapper from './Wrapper.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE } from '../consts';
 
 const { title, description } = Astro.props;
+const conditionalTitle = title ? `${title} | ${SITE.title}` : SITE.title;
+
+const baseHeadProps = {
+    title: conditionalTitle,
+	description,
+}
 ---
 
 <html lang="ko">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead {...baseHeadProps}/>
 	</head>
 	<body>
-		<Header />
-        <slot/>
-		<Footer />
+		
+		<Wrapper>
+			<Header />
+			<slot/>
+			<Footer />
+		</Wrapper>
+		<script is:inline>
+		const wrap = document.getElementById('wrap');
+		const pathname = location.pathname;
+
+		if (pathname.includes('posts')) {
+			wrap.classList.add('postPage');
+		} else {
+			wrap.classList.remove('postPage');
+			wrap.classList.add('blogPage');
+		}
+		</script>
 	</body>
 </html>

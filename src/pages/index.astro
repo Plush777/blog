@@ -2,11 +2,12 @@
 import Template from '../layouts/Template.astro';
 import PostList from '../components/PostList.astro';
 import CategoryList from '../components/CategoryList.astro';
-import Wrapper from '../layouts/Wrapper.astro';
+import MainTemplate from '../layouts/MainTemplate.astro';
+
 ---
 <Template>
-	<Wrapper className="blogPostList" id="blogIndex">
+	<MainTemplate className="blogList">
 		<CategoryList/>
 		<PostList/>
-	</Wrapper>
+	</MainTemplate>
 </Template>

@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Template from "./Template.astro";
+import MainTemplate from "./MainTemplate.astro";
+import Category from "../components/Category.astro";
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+const { slug } = Astro.params;
+const myCategory = posts.filter((post) => post.data.category === slug);
+
+const url = Astro.url.pathname;
+const categoryLastUrl = url.substring(url.lastIndexOf('/') + 1);
+const decodeCategoryLastUrl = decodeURI(categoryLastUrl);
+---
+
+<Template title={`${decodeCategoryLastUrl} 관련글`}>
+    <MainTemplate className="blogList">
+        <Category {myCategory} {decodeCategoryLastUrl}>
+            <slot/>
+        </Category>
+    </MainTemplate>
+</Template>

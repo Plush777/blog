@@ -1,19 +1,31 @@
-header {position: fixed; width: 100%; height: 60px; background: var(--fff); border-bottom: 1px solid var(--ddd); z-index: 10;
-    h2 {font-size: 1rem;}
-}
-
-nav {display: flex; align-items: center; height: 100%; width: 100%; max-width: 768px; margin: 0 auto; 
-padding: 0 10px;
-    a {color: var(--black);
-        &.active{color: var(--accent); font-weight: 600;}
+.header {position: fixed; width: 100%; height: 60px; background: var(--fff); 
+border-bottom: 1px solid var(--ddd); z-index: 10;
+    a{color: inherit;}
+    &Logo{font-size: 1rem;
+        &Box{display: flex; align-items: center; width: 100%; height: 100%;}
+    }
+    &Menu{
+        &Area{display: flex; align-items: center; height: 100%; width: 100%; max-width: 788px; margin: 0 auto; 
+        padding: 0 10px;
+            :where(h1,h2,h3,h4,h5){margin: 0;}
+            ul{margin: 0; padding: 0;}
+            li{list-style: none;}
+        }
+        &List{display: flex; align-items: center; height: 100%; column-gap: 20px;}
+        &Item{display: flex; align-items: center; height: 100%;}
+        &Link{color: var(--black);
+            &.active{color: var(--accent); font-weight: 600;}
+        }
     }
 }
 
-main {width: 100%; max-width: 788px; margin: 0 auto; padding: 132px 10px 80px 10px;}
+#main{width: 100%; max-width: 788px; margin: 0 auto; padding: 132px 10px 80px 10px;}
 
 footer {display: flex; flex-direction: column; align-items: center; justify-content: center; height: 200px;
-background: var(--fff); text-align: center;}
-
+background: var(--fff); text-align: center;
+    a{color: inherit;}
+}
+    
 .copy{font-size: .875rem; color: var(--black);}
 
 .socials {display: flex; justify-content: center;}
@@ -22,8 +34,8 @@ background: var(--fff); text-align: center;}
 
 .giscus{margin-top: 100px; min-height: 376px;}
 
-/* 블로그 글 마크다운 스타일 */
-#blogPostMain{
+/* 아티클 스타일 */
+.blogArticle{
     h1 {font-size: var(--h1);}
     h2 {font-size: var(--h2);}
     h3 {font-size: var(--h3);}
@@ -54,11 +66,12 @@ background: var(--fff); text-align: center;}
     a{text-decoration: revert;}
 }
 
-/* 블로그 글 목록 스타일 */
-#blogIndex{
+/* 포스트 목록 */
+.blogList{
     ul{margin: 0; padding: 0; list-style-type: none;}
     p{margin: 0;}
     img{object-fit: cover;}
+    a{color: inherit;}
 
     .myPost{
         &List{display: flex; flex-direction: column; row-gap: 90px;}
@@ -70,14 +83,14 @@ background: var(--fff); text-align: center;}
         &Description{color: var(--c333); padding-top: 10px;}
         &Thumbnail{position: absolute; top: 0; left: 0; height: 100%;}
     }
+}
 
-    @media (hover:hover){ 
-        .myPost{
-            &List{
-                li:hover{
-                    .myPostTop{box-shadow: var(--box-shadow);}
-                    .myPostTitle{color: rgb(var(--accent));}
-                }
+@media (hover:hover){ 
+    .myPost{
+        &List{
+            li:hover{
+                .myPostTop{box-shadow: var(--box-shadow);}
+                .myPostTitle{color: rgb(var(--accent));}
             }
         }
     }

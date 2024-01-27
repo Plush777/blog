@@ -1,16 +1,21 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import Link from './Link.astro';
+import { SITE } from '../consts';
 ---
 
-<header>
-	<nav>
-		<h2>
-			<a href="/">{SITE_TITLE}</a>
+<header class="header">
+	<nav class="headerMenuArea">
+		<h2 class="headerLogoBox">
+			<a href="/" class="headerLogo">{SITE.title}</a>
 		</h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
+
+		<ul class="headerMenuList">
+			<li class="headerMenuItem">
+				<Link href="/" className="headerMenuLink">Home</Link>
+			</li>
+			<li class="headerMenuItem">
+				<Link href="/about" className="headerMenuLink">About</Link>
+			</li>
+		</ul>
 	</nav>
 </header>

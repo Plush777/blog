@@ -1,5 +1,8 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'Plush 기술 블로그';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE = {
+    desc: "경험과 노하우를 공유하고 있어요.",
+    title: "Plush 기술 블로그",
+    ogImage: "미정",
+    ogType: "website",
+    twitterCard: "summary",
+    robots: "index,follow",
+};

@@ -1,0 +1,9 @@
+---
+const { href, className } = Astro.props;
+
+const { pathname } = Astro.url;
+const isActive = pathname === href && 'active';
+---
+<a href={href} class={`${className} ${isActive}`}>
+    <slot/>
+</a>

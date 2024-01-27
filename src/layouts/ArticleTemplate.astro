@@ -1,0 +1,17 @@
+---
+import Template from "./Template.astro";
+import MainTemplate from "./MainTemplate.astro";
+import Article from "../components/Article.astro";
+import Comments from "../components/Comments.astro";
+
+const { title, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<Template {title}>
+    <MainTemplate className="blogArticle">
+        <Article {title} {pubDate} {updatedDate} {heroImage}>
+            <slot/>
+        </Article>
+        <Comments/>
+    </MainTemplate>
+</Template>
