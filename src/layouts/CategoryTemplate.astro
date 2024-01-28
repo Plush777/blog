@@ -4,9 +4,7 @@ import Template from "./Template.astro";
 import MainTemplate from "./MainTemplate.astro";
 import Category from "../components/Category.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const posts = await getCollection('blog');
 
 const { slug } = Astro.params;
 const myCategory = posts.filter((post) => post.data.category === slug);

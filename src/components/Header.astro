@@ -3,18 +3,18 @@ import Link from './Link.astro';
 import { SITE } from '../consts';
 ---
 
-<header class="header">
+<header id="header">
 	<nav class="headerMenuArea">
 		<h2 class="headerLogoBox">
-			<a href="/" class="headerLogo">{SITE.title}</a>
+			<a href="/" class="headerLogo">{SITE.name}</a>
 		</h2>
 
 		<ul class="headerMenuList">
 			<li class="headerMenuItem">
-				<Link href="/" className="headerMenuLink">Home</Link>
+				<Link href="/" className="headerMenuLink" linkType="menuActive">Home</Link>
 			</li>
 			<li class="headerMenuItem">
-				<Link href="/about" className="headerMenuLink">About</Link>
+				<Link href="/about" className="headerMenuLink" linkType="menuActive">About</Link>
 			</li>
 		</ul>
 	</nav>

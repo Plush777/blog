@@ -1,15 +1,19 @@
 ---
-const today = new Date();
+import Link from "./Link.astro";
+import { SITE } from "../consts";
 ---
 
-<footer>
-	<div class="socials">
-		<a href="/" target="_blank">
-			<span class="hidden">깃허브 바로가기</span>
-		</a>
-		<a href="/" target="_blank">
-			<span class="hidden">메일 보내기</span>
-		</a>
+<footer id="footer">
+	<div class="footerInner">
+		<span class="footerCopy">&copy; {SITE.name}</span>
+
+		<ul class="footerMenuList">
+			<li class="footerMenuItem">
+				<Link href={SITE.github} className="footerMenuLink">Github</Link>
+			</li>
+			<li class="footerMenuItem">
+				<Link href={SITE.discord} className="footerMenuLink">Discord</Link>
+			</li>
+		</ul>
 	</div>
-	<span class="copy">&copy; {today.getFullYear()} Your name here. All rights reserved.</span>
 </footer>
