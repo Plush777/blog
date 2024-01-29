@@ -1,10 +1,13 @@
 ---
 import FormattedDate from '../components/FormattedDate.astro';
 
-const { decodeCategoryLastUrl, myCategory } = Astro.props;
+const { decodeCategoryLastUrl, myCategory, categoryCountStore } = Astro.props;
 ---
-<section>
-    <h3>{decodeCategoryLastUrl}&nbsp;관련 글</h3>
+<section class="categoryFilterSection">
+    <div class="categoryArea">
+        <h3 class="categoryTitle">{decodeCategoryLastUrl}&nbsp;관련 글</h3>
+        <span class="categoryCount">{`총 ${categoryCountStore}개의 포스트가 있어요.`}</span>
+    </div>
     <ul class="myPostList">
         {myCategory.map((post) => (
             <li>

@@ -3,7 +3,7 @@ title: 'First post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: '2023-04-04'
 heroImage: '/blog-placeholder-3.jpg'
-category: '개발'
+category: '테스트'
 updatedDate: '2023-04-04'
 ---
 ssss

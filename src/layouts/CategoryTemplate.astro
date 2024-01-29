@@ -1,23 +1,29 @@
 ---
 import { getCollection } from 'astro:content';
-import Template from "./Template.astro";
-import MainTemplate from "./MainTemplate.astro";
+import LayoutTemplate from './LayoutTemplate.astro';
 import Category from "../components/Category.astro";
-
+import countCategory  from "../utils/countCategory";
+   
 const posts = await getCollection('blog');
 
-const { slug } = Astro.params;
+const { slug } = Astro.params; 
+const categoryData = posts.map(item => item.data.category);
 const myCategory = posts.filter((post) => post.data.category === slug);
+
+let categoryCountStore;
+const categoryCountData = countCategory(categoryData);
+const categoryCountDataFilter = Object.entries(categoryCountData).filter(([key,value]) => key === slug);
+// console.log(categoryCountDataFilter);
+categoryCountDataFilter.forEach(([key,value]) => (categoryCountStore = value));
+
+// console.log(categoryCountStore);
 
 const url = Astro.url.pathname;
 const categoryLastUrl = url.substring(url.lastIndexOf('/') + 1);
 const decodeCategoryLastUrl = decodeURI(categoryLastUrl);
 ---
-
-<Template title={`${decodeCategoryLastUrl} 관련글`}>
-    <MainTemplate className="blogList">
-        <Category {myCategory} {decodeCategoryLastUrl}>
-            <slot/>
-        </Category>
-    </MainTemplate>
-</Template>
+<LayoutTemplate title={`${decodeCategoryLastUrl} 관련글`}>
+    <Category {myCategory} {decodeCategoryLastUrl} {categoryCountStore}>
+        <slot/>
+    </Category>
+</LayoutTemplate>

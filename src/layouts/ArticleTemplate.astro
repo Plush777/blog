@@ -1,21 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
-import Template from "./Template.astro";
-import MainTemplate from "./MainTemplate.astro";
 import Article from "../components/Article.astro";
 import Comments from "../components/Comments.astro";
+import LayoutTemplate from "./LayoutTemplate.astro";
 
-const { title, pubDate, updatedDate, heroImage } = Astro.props;
-
-const posts = await getCollection('blog');
-const myCategory = posts.map((post) => post.data.category);
+const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
 ---
-
-<Template {title}>
-    <MainTemplate className="blogArticle">
-        <Article {title} {pubDate} {updatedDate} {heroImage} {myCategory}>
-            <slot/>
-        </Article>
-        <Comments/>
-    </MainTemplate>
-</Template>
+<LayoutTemplate {title}>
+    <Article {title} {pubDate} {updatedDate} {heroImage} {category}>
+        <slot/>
+    </Article>
+    <Comments/>
+</LayoutTemplate>

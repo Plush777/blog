@@ -1,24 +1,26 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-const { title, pubDate, updatedDate, heroImage, myCategory } = Astro.props;
-
-// const myCategoryFilter = myCategory.filter
-console.log(myCategory)
+const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
 ---
 
 <article class="article">
-    {myCategory}
     <div class="heroImgArea">
-        {heroImage && <img width={1020} height={510} src={heroImage} alt={title} />}
+        <div class="heroImgInner">
+            {heroImage && <img class="heroImgItem" width={1020} height={510} src={heroImage} alt={title} />}
+
+            <div class="heroImgBox">
+                <div class="articleBox">
+                    <span class="articleCategory">{category}</span>
+                    <h1 class="articleTitle">{title}</h1>
+                    <div class="articleDate">
+                        <FormattedDate date={pubDate} />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
     <div class="articleContainer">
-        <div class="articleTitle">
-            <div class="articleDate">
-                <FormattedDate date={pubDate} />
-            </div>
-            <h1>{title}</h1>
-            <hr />
-        </div>
         <slot />
         {
             updatedDate && (

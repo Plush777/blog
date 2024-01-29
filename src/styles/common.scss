@@ -1,16 +1,21 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+.nanummyeongjo{
+    font-family: 'Nanum Myeongjo', serif;
+}
+
 #header {position: fixed; width: 100%; height: 60px; background: var(--fff); 
 border-bottom: 1px solid var(--ddd); z-index: 10;
     :where(h1,h2,h3,h4,h5,h6){margin: 0;}
     ul{margin: 0; padding: 0;}
-    a{color: inherit; text-decoration: none;}
 
     .header{
-        &Logo{font-size: 1rem;
-            &Box{display: flex; align-items: center; width: 100%; height: 100%;}
+        &Logo{font-size: 1.5rem; font-weight: 600; letter-spacing: 0.5px; user-select: none;
+            &Box{display: flex; align-items: center; height: 100%;}
         }
         &Menu{
-            &Area{display: flex; align-items: center; height: 100%; width: 100%; max-width: var(--mxw1140); margin: 0 auto; 
-            padding: 0 10px;}
+            &Area{display: flex; align-items: center; justify-content: space-between; 
+            height: 100%; width: 100%; max-width: var(--mxw1140); margin: 0 auto; padding: 0 10px;}
             &List{display: flex; align-items: center; height: 100%; column-gap: 20px;}
             &Item{display: flex; align-items: center; height: 100%;}
             &Link{color: var(--black);
@@ -40,7 +45,6 @@ background: var(--fff); text-align: center;
     
 .giscus{min-height: 376px; max-width: var(--mxw768); margin: 100px auto;}
 
-/* 포스트 목록 */
 .blogPage{
     .myPost{
         &List{display: flex; flex-direction: column; row-gap: 90px;}
@@ -52,45 +56,72 @@ background: var(--fff); text-align: center;
         &Description{color: var(--c333); padding-top: 10px;}
         &Thumbnail{position: absolute; top: 0; left: 0; height: 100%;}
     }
+
+    .category{
+        &Area{display: flex; flex-direction: column; row-gap: 10px;}
+        &List{display: flex; align-items: center; gap: 10px; flex-flow: row wrap; margin-top: 5px;}
+        &Item{display: flex; align-items: center; height: 34px; border: 1px solid rgba($color: #000, $alpha: .1); 
+        border-radius: 16px; background-color: var(--fff);}
+        &Title{font-size: 1.25rem;}
+        &Link{padding: 0 10px; font-size: 1rem; color: var(--c333);}
+        &FilterSection{
+            .categoryArea{margin-bottom: 20px;}
+        }
+        &Section{
+            .categoryArea{margin-bottom: 40px; text-indent: 2.5px;}
+        }
+        &Count{font-size: 1rem; color: var(--c666);}
+    }
 }
 
-/* 아티클 스타일 */
 .postPage{
-    h1 {font-size: var(--h1);}
-    h2 {font-size: var(--h2);}
-    h3 {font-size: var(--h3);}
-    h4 {font-size: var(--h4);}
-    h5 {font-size: var(--h5);}
-   
-    h1,h2,h3,h4,h5,h6 {margin: 0 0 20px 0; color: rgb(var(--black)); line-height: 1.2;}
-    .astro-code{padding: 20px; margin: 15px 0;}
-    li{line-height: 34px;}
-    p {margin-top: 15px; margin-bottom: 40px; line-height: 1.7;}
-    code {padding: 2px 5px; background-color: rgb(var(--gray-light)); border-radius: 2px;}
-    pre {border-radius: 8px;
-        > code {all: unset;}
+    #main{max-width: none; padding: 60px 0 0 0;}
+    #header{
+        a{color: inherit; text-decoration: none;}
     }
-    blockquote {border-left: 4px solid var(--accent); padding: 0 0 0 20px; font-size: var(--h4); margin: 0;}
-    table{width: 100%;
-        th{text-align: left;}
-        th,td{line-height: 34px;}
-    }
-    hr{margin: 0; border-top: 1px solid 1px solid rgb(var(--gray-light));}
-    a{text-decoration: revert;}
-    #main{max-width: none; padding: 0;}
 }
 
 .article{
-    &Container{width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: 0 auto;}
-    &Title{padding: 40px 0 16px 0; text-align: center;}
-    &Date{margin-bottom: 10px; color: rgb(var(--gray));}
+    h1{margin: 0;}
+    &Container{width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: 55px auto;
+        h1 {font-size: var(--h1);}
+        h2 {font-size: var(--h2);}
+        h3 {font-size: var(--h3);}
+        h4 {font-size: var(--h4);}
+        h5 {font-size: var(--h5);}
+        :where(h1,h2,h3,h4,h5,h6) {margin: 0 0 20px 0; color: rgb(var(--black)); line-height: 1.2;}
+        .astro-code{padding: 20px; margin: 15px 0;}
+        li{line-height: 34px;}
+        p {margin-top: 15px; margin-bottom: 40px; line-height: 1.7;}
+        code {padding: 2px 5px; background-color: rgb(var(--gray-light)); border-radius: 2px;}
+        pre {border-radius: 8px;
+            > code {all: unset;}
+        }
+        blockquote {border-left: 4px solid var(--accent); padding: 0 0 0 20px; font-size: var(--h4); margin: 0;}
+        table{width: 100%;
+            th{text-align: left;}
+            th,td{line-height: 34px;}
+        }
+        a{text-decoration: revert;}
+    }
+    &Category{font-size: 1rem; color: var(--fff);
+        +.articleTitle{margin-top: 5px;}
+    }
+    &Title{font-size: 2.5rem; color: var(--fff);
+        +.articleDate{margin-top: 20px;}
+    }
+    &Date{color: var(--fff85); font-size: 1.125rem;}
     &Updated{font-style: italic; color: var(--c333);}
+    &Box{display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; height: 100%;}
 }
-
+ 
 .heroImg{
     &Area{position: relative; height: 400px;
-        &::before{content: ''; position: absolute; width: 100%; height: 100%;
+        &::before{content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: 100%;
         background-color: rgba($color: #000, $alpha: 0.2);}
-        img{height: 100%; border-radius: 0; object-fit: cover;}
     }
+    &Inner{display: flex; align-items: center; justify-content: center; height: 100%;}
+    &Box{position: relative; width: 100%; height: 100%;}
+    &Item{position: absolute; left: 0; top: 0; z-index: -1; height: 100%; border-radius: 0;
+    user-select: none;}
 }
