@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import getRandomColor from '../utils/getRandomColor.js';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -9,12 +10,14 @@ const posts = (await getCollection('blog')).sort(
 <section>
     <ul class="myPostList">
         {posts.map((post) => (
-            <li>
+            <li class="myPostItem">
                 <a href={`/posts/${post.slug}/`} class="myPostLink">
-                    <div class="myPostTop">
-                        <img class="myPostThumbnail" width={720} height={360} src={post.data.heroImage} alt="" />
+                    <div class={`myPostTop ${!post.data.heroImage && getRandomColor()}`}>
+                        {post.data.heroImage &&
+                            <img class="myPostThumbnail" width={768} height={400} src={post.data.heroImage} 
+                            alt={`${post.data.title} 글 썸네일`} />
+                        }
                     </div>
-
                     <div class="myPostBottom">
                         <h4 class="myPostTitle">{post.data.title}</h4>
                         <p class="myPostDescription">{post.data.description}</p>

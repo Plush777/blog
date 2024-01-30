@@ -4,6 +4,14 @@
     font-family: 'Nanum Myeongjo', serif;
 }
 
+.red{background-color: #FF6F6E;}
+.orange{background-color: #FEBB6C;}
+.yellow{background-color: #FFE375;}
+.green{background-color: #E1F5C4;}
+.blue{background-color: #8CF0FF;}
+.navy{background-color: #96A0FF;}
+.purple{background-color: #CDD1FF;}
+
 #header {position: fixed; width: 100%; height: 60px; background: var(--fff); 
 border-bottom: 1px solid var(--ddd); z-index: 10;
     :where(h1,h2,h3,h4,h5,h6){margin: 0;}
@@ -25,7 +33,9 @@ border-bottom: 1px solid var(--ddd); z-index: 10;
     }
 }
 
-#main{width: 100%; max-width: 788px; margin: 0 auto; padding: 132px 10px 80px 10px;}
+.main{
+    &Inner{width: 100%; max-width: 788px; margin: 0 auto; padding: 132px 10px 80px 10px;}
+}
 
 #footer {display: flex; flex-direction: column; align-items: center; justify-content: center; height: 85px;
 background: var(--fff); text-align: center;
@@ -46,24 +56,28 @@ background: var(--fff); text-align: center;
 .giscus{min-height: 376px; max-width: var(--mxw768); margin: 100px auto;}
 
 .blogPage{
+    .main{background-color: var(--bg1);}
+
     .myPost{
         &List{display: flex; flex-direction: column; row-gap: 90px;}
-        &Link{display: flex; flex-direction: column; row-gap: 20px;}
-        &Top{position: relative; padding-top: 52.085%; transition: .3s ease-in-out;}
+        &Item{border: 1px solid var(--c000-a1); border-radius: 12px; min-height: 500px;}
+        &Bottom{padding: 16px;}
+        &Link{display: flex; flex-direction: column;}
+        &Top{position: relative; padding-top: 47.259%; transition: .3s ease-in-out; border-radius: 12px 12px 0 0;}
         &Title{font-size: var(--h3); margin: 0; color: rgb(var(--black)); line-height: 1;
         transition: .3s ease-in-out;}
         &Date{padding-top: 20px; margin: 0; color: rgb(var(--gray));}
         &Description{color: var(--c333); padding-top: 10px;}
-        &Thumbnail{position: absolute; top: 0; left: 0; height: 100%;}
+        &Thumbnail{position: absolute; top: 0; left: 0; height: 100%; border-radius: inherit;}
     }
 
     .category{
         &Area{display: flex; flex-direction: column; row-gap: 10px;}
         &List{display: flex; align-items: center; gap: 10px; flex-flow: row wrap; margin-top: 5px;}
-        &Item{display: flex; align-items: center; height: 34px; border: 1px solid rgba($color: #000, $alpha: .1); 
+        &Item{display: flex; align-items: center; height: 34px; border: 1px solid var(--c000-a1); 
         border-radius: 16px; background-color: var(--fff);}
         &Title{font-size: 1.25rem;}
-        &Link{padding: 0 10px; font-size: 1rem; color: var(--c333);}
+        &Link{padding: 0 10px; display: flex; align-items: center; height: 100%; font-size: 1rem; color: var(--c333);}
         &FilterSection{
             .categoryArea{margin-bottom: 20px;}
         }
@@ -75,7 +89,9 @@ background: var(--fff); text-align: center;
 }
 
 .postPage{
-    #main{max-width: none; padding: 60px 0 0 0;}
+    .main{
+        &Inner{max-width: none; padding: 60px 0 0 0;}
+    }
     #header{
         a{color: inherit; text-decoration: none;}
     }
@@ -110,7 +126,7 @@ background: var(--fff); text-align: center;
     &Title{font-size: 2.5rem; color: var(--fff);
         +.articleDate{margin-top: 20px;}
     }
-    &Date{color: var(--fff85); font-size: 1.125rem;}
+    &Date{color: var(--fff-a85); font-size: 1.125rem;}
     &Updated{font-style: italic; color: var(--c333);}
     &Box{display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; height: 100%;}
 }

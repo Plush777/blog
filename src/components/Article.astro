@@ -4,9 +4,9 @@ const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
 ---
 
 <article class="article">
-    <div class="heroImgArea">
+    <div class={`heroImgArea`}>
         <div class="heroImgInner">
-            {heroImage && <img class="heroImgItem" width={1020} height={510} src={heroImage} alt={title} />}
+            {heroImage && <img class="heroImgItem" width={1903} height={400} src={heroImage} alt={title} />}
 
             <div class="heroImgBox">
                 <div class="articleBox">
