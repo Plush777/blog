@@ -1,12 +1,15 @@
 ---
+import VueArticleHero from './vue/VueArticleHero.vue';
 import FormattedDate from './FormattedDate.astro';
 const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
 ---
 
 <article class="article">
-    <div class={`heroImgArea`}>
+    <div class="heroImgArea">
         <div class="heroImgInner">
-            {heroImage && <img class="heroImgItem" width={1903} height={400} src={heroImage} alt={title} />}
+           
+            <VueArticleHero heroImage={heroImage} title={title} client:load/>
+           
 
             <div class="heroImgBox">
                 <div class="articleBox">

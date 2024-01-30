@@ -8,7 +8,7 @@
 .orange{background-color: #FEBB6C;}
 .yellow{background-color: #FFE375;}
 .green{background-color: #E1F5C4;}
-.blue{background-color: #8CF0FF;}
+.blue{background-color: #B4CEEB;}
 .navy{background-color: #96A0FF;}
 .purple{background-color: #CDD1FF;}
 
@@ -63,7 +63,9 @@ background: var(--fff); text-align: center;
         &Item{border: 1px solid var(--c000-a1); border-radius: 12px; min-height: 500px;}
         &Bottom{padding: 16px;}
         &Link{display: flex; flex-direction: column;}
-        &Top{position: relative; padding-top: 47.259%; transition: .3s ease-in-out; border-radius: 12px 12px 0 0;}
+        &TopBox{position: relative;min-height: 362px;
+            .myPostTop{padding-top: 47.259%;  border-radius: 12px 12px 0 0;}
+        }
         &Title{font-size: var(--h3); margin: 0; color: rgb(var(--black)); line-height: 1;
         transition: .3s ease-in-out;}
         &Date{padding-top: 20px; margin: 0; color: rgb(var(--gray));}
@@ -136,8 +138,9 @@ background: var(--fff); text-align: center;
         &::before{content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: 100%;
         background-color: rgba($color: #000, $alpha: 0.2);}
     }
-    &Inner{display: flex; align-items: center; justify-content: center; height: 100%;}
+    &Inner{position: relative; display: flex; align-items: center; justify-content: center; height: 100%;}
     &Box{position: relative; width: 100%; height: 100%;}
     &Item{position: absolute; left: 0; top: 0; z-index: -1; height: 100%; border-radius: 0;
     user-select: none;}
+    &Background{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 }
