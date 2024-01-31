@@ -1,25 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import VuePostTop from './vue/VuePostTop.vue';
-import VuePostLink from './vue/VuePostLink.vue';
-import VuePostBottom from './vue/VuePostBottom.vue';
+import PostListSection from './PostListSection.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
-<section>
-    <ul class="myPostList">
-        {posts.map((post) => (
-            <li class="myPostItem">
-                <VuePostLink postsData={post.data} client:load>
-                    <VuePostTop postsData={post.data} client:load/>
-                </VuePostLink>
-                <VuePostBottom postsData={post.data} client:load>
-                    <FormattedDate date={post.data.pubDate} />
-                </VuePostBottom>
-            </li>
-        ))}
-    </ul>
-</section>
+
+<PostListSection data={posts} />

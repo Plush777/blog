@@ -1,7 +1,9 @@
 <template>
     <div class="myPostBottom">
-        <h4 class="myPostTitle">{{postsData.title}}</h4>
-        <p class="myPostDescription">{{postsData.description}}</p>
+        <div class="myPostBottomInner">
+            <h4 class="myPostTitle">{{postData.title}}</h4>
+            <p class="myPostDescription">{{postData.description}}</p>
+        </div>
         <p class="myPostDate">
             <slot/>
         </p>
@@ -11,5 +13,5 @@
 <script setup>
 import { defineProps } from 'vue';
 
-const props = defineProps(['postsData']);
+const props = defineProps(['postData']);
 </script>

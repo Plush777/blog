@@ -1,0 +1,77 @@
+@media screen and (max-width: 768px) {
+    .main{
+        &Inner{padding: 100px 20px 40px 20px;}
+    }
+    .heroImg{
+        &BackgroundName{font-size: 2.75rem;}
+    }
+    
+    .blogPage{
+        .myPost{
+            &List{row-gap: 60px;}
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .heroImg{
+        &BackgroundName{font-size: 2.125rem;}
+    }
+
+    .blogPage{
+        .myPost{
+            &List{row-gap: 30px;}
+            &Title{font-size: 1.5rem;}
+            &Description{font-size: .875rem;}
+            &BottomInner{row-gap: 5px;}
+            &Date{font-size: .75rem;}
+        }
+        .category{
+            &Section{
+                .categoryArea{margin-bottom: 20px;}
+            }
+            &Area{row-gap: 5px;}
+            &Title{font-size: 1.125rem;}
+            &Link{font-size: .875rem;}
+        }
+    }
+
+    #header{
+        .header{
+            &Menu{
+                &Link{font-size: .875rem;}
+            }
+            &Logo{font-size: 1.375rem;}
+        }
+    }
+
+    .footer{
+        &Menu{
+            &List{column-gap: 20px;}
+            &Link{font-size: .875rem;}
+        }
+        &Copy{font-size: .875rem;}
+    }
+
+    .article{
+        &Title{font-size: 2.25rem;}
+        &Date{font-size: 1rem;}
+        &Container{margin: 35px auto;}
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .heroImg{
+        &BackgroundName{font-size: 1.625rem;}
+    }
+
+    .blogPage{
+        .myPost{
+            &Title{font-size: 1.25rem;}
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #wrap{min-width: 320px;}
+}

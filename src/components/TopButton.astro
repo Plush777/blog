@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<div class="btnArea">
+    <button type="button" class="btnTop">
+        <span class="hidden">위로 올라가기</span>
+        <Icon name="majesticons:arrow-up" />
+    </button>
+</div>
+
+<style lang="scss">
+    .btn{
+        &Area{display: flex; align-items: center; justify-content: flex-end; 
+        margin-right: 20px; margin-bottom: 20px; position: sticky; bottom: 20px;}
+        &Top{background-color: var(--fff);}
+    }
+</style>
+
+<script>
+    const btnTop = document.querySelector('.btnTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            btnTop.classList.add('active');
+        } else {
+            btnTop.classList.remove('active');
+        }
+    });
+
+    btnTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>

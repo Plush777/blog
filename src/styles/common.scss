@@ -4,13 +4,7 @@
     font-family: 'Nanum Myeongjo', serif;
 }
 
-.red{background-color: #FF6F6E;}
-.orange{background-color: #FEBB6C;}
-.yellow{background-color: #FFE375;}
-.green{background-color: #E1F5C4;}
-.blue{background-color: #B4CEEB;}
-.navy{background-color: #96A0FF;}
-.purple{background-color: #CDD1FF;}
+.primary1{background-color: var(--primary1);}
 
 #header {position: fixed; width: 100%; height: 60px; background: var(--fff); 
 border-bottom: 1px solid var(--ddd); z-index: 10;
@@ -23,22 +17,22 @@ border-bottom: 1px solid var(--ddd); z-index: 10;
         }
         &Menu{
             &Area{display: flex; align-items: center; justify-content: space-between; 
-            height: 100%; width: 100%; max-width: var(--mxw1140); margin: 0 auto; padding: 0 10px;}
+            height: 100%; width: 100%; max-width: var(--mxw1140); margin: 0 auto; padding: 0 20px;}
             &List{display: flex; align-items: center; height: 100%; column-gap: 20px;}
             &Item{display: flex; align-items: center; height: 100%;}
-            &Link{color: var(--black);
-                &.active{color: var(--accent); font-weight: 600;}
+            &Link{color: var(--black); font-weight: 500;
+                &.active{color: var(--primary1); font-weight: 600;}
             }
         }
     }
 }
 
 .main{
-    &Inner{width: 100%; max-width: 788px; margin: 0 auto; padding: 132px 10px 80px 10px;}
+    &Inner{width: 100%; max-width: var(--mxw768); margin: 0 auto; padding: 132px 0 60px 0;}
 }
 
 #footer {display: flex; flex-direction: column; align-items: center; justify-content: center; height: 85px;
-background: var(--fff); text-align: center;
+background: var(--fff); text-align: center; padding: 0 20px;
     ul{margin: 0; padding: 0;}
     li{list-style: none;}
     a{color: inherit; text-decoration: none;}
@@ -53,23 +47,25 @@ background: var(--fff); text-align: center;
     }
 }
     
-.giscus{min-height: 376px; max-width: var(--mxw768); margin: 100px auto;}
+.giscus{min-height: 376px; max-width: var(--mxw768); margin: 100px auto; padding: 0 20px;}
 
-.blogPage{
-    .main{background-color: var(--bg1);}
-
+.blogPage{background-color: var(--bg1);
     .myPost{
         &List{display: flex; flex-direction: column; row-gap: 90px;}
-        &Item{border: 1px solid var(--c000-a1); border-radius: 12px; min-height: 500px;}
-        &Bottom{padding: 16px;}
-        &Link{display: flex; flex-direction: column;}
-        &TopBox{position: relative;min-height: 362px;
-            .myPostTop{padding-top: 47.259%;  border-radius: 12px 12px 0 0;}
-        }
-        &Title{font-size: var(--h3); margin: 0; color: rgb(var(--black)); line-height: 1;
-        transition: .3s ease-in-out;}
-        &Date{padding-top: 20px; margin: 0; color: rgb(var(--gray));}
-        &Description{color: var(--c333); padding-top: 10px;}
+        &Item{border-radius: var(--bdrs12); transition: var(--transition1);}
+        &Bottom{padding: 16px; border: 1px solid var(--c000-a1); border-top: 0; border-radius: var(--bdrs-bottom12);
+            &Inner{display: flex; flex-direction: column; row-gap: 10px;}
+        } 
+        &Link{display: flex; flex-direction: column; height: 100%; border-radius: var(--bdrs-top12); overflow: hidden;}
+        &TopBox{position: relative; border: 1px solid var(--c000-a1); padding-top: var(--post-height);
+        border-radius: var(--bdrs-top12); background-color: var(--bg1); transition: var(--transition1);}
+        &Title{font-size: 1.75rem; color: rgb(var(--black)); line-height: 1;
+        transition: var(--transition1);}
+        &Date{font-size: .875rem; margin-top: 20px; color: rgb(var(--gray));}
+        &Description{height: 64px; max-height: 64px; font-size: 1rem; color: var(--c333);
+        display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+        overflow: hidden; text-overflow: ellipsis; line-height: 1.5; word-break: break-word;
+        word-wrap: break-word;}
         &Thumbnail{position: absolute; top: 0; left: 0; height: 100%; border-radius: inherit;}
     }
 
@@ -79,7 +75,8 @@ background: var(--fff); text-align: center;
         &Item{display: flex; align-items: center; height: 34px; border: 1px solid var(--c000-a1); 
         border-radius: 16px; background-color: var(--fff);}
         &Title{font-size: 1.25rem;}
-        &Link{padding: 0 10px; display: flex; align-items: center; height: 100%; font-size: 1rem; color: var(--c333);}
+        &Link{padding: 0 10px; display: flex; align-items: center; height: 100%; 
+        font-size: 1rem; font-weight: 500; color: var(--c333);}
         &FilterSection{
             .categoryArea{margin-bottom: 20px;}
         }
@@ -97,11 +94,16 @@ background: var(--fff); text-align: center;
     #header{
         a{color: inherit; text-decoration: none;}
     }
+    .heroImg{
+        &Inner{
+            .heroImgBackground{padding-top: 0;}
+        }
+    }
 }
 
 .article{
     h1{margin: 0;}
-    &Container{width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: 55px auto;
+    &Container{width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: 55px auto; word-break: keep-all;
         h1 {font-size: var(--h1);}
         h2 {font-size: var(--h2);}
         h3 {font-size: var(--h3);}
@@ -115,7 +117,7 @@ background: var(--fff); text-align: center;
         pre {border-radius: 8px;
             > code {all: unset;}
         }
-        blockquote {border-left: 4px solid var(--accent); padding: 0 0 0 20px; font-size: var(--h4); margin: 0;}
+        blockquote {border-left: 4px solid var(--primary1); padding: 0 0 0 20px; font-size: var(--h4); margin: 0;}
         table{width: 100%;
             th{text-align: left;}
             th,td{line-height: 34px;}
@@ -134,13 +136,24 @@ background: var(--fff); text-align: center;
 }
  
 .heroImg{
-    &Area{position: relative; height: 400px;
+    &Area{position: relative; height: 400px; background-attachment: fixed;
         &::before{content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: 100%;
         background-color: rgba($color: #000, $alpha: 0.2);}
     }
-    &Inner{position: relative; display: flex; align-items: center; justify-content: center; height: 100%;}
+    &Inner{position: relative; display: flex; align-items: center; justify-content: center; height: 100%;
+        .heroImgBackground{z-index: -1;padding-top: var(--post-height);}
+    }
     &Box{position: relative; width: 100%; height: 100%;}
     &Item{position: absolute; left: 0; top: 0; z-index: -1; height: 100%; border-radius: 0;
     user-select: none;}
-    &Background{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+    &Background{display: flex; align-items: center; justify-content: center; 
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%; border-radius: inherit;
+        &Name{font-size: 3.25rem; letter-spacing: 2.5px; font-weight: 800; color: var(--fff);}
+    }
+}
+
+.btnTop{opacity: 0; visibility: hidden; display: flex; align-items: center; justify-content: center; 
+width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--ddd); transition: var(--transition1);
+    svg{width: 20px; height: 20px;}
+    &.active{opacity: 1; visibility: visible;}
 }

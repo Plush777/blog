@@ -3,10 +3,10 @@ import Article from "../components/Article.astro";
 import Comments from "../components/Comments.astro";
 import LayoutTemplate from "./LayoutTemplate.astro";
 
-const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
+const { title, pubDate, updatedDate, heroImage, category, backgroundColor } = Astro.props;
 ---
 <LayoutTemplate {title}>
-    <Article {title} {pubDate} {updatedDate} {heroImage} {category}>
+    <Article {title} {pubDate} {updatedDate} {heroImage} {category} {backgroundColor}>
         <slot/>
     </Article>
     <Comments/>

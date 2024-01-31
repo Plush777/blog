@@ -1,12 +1,7 @@
 @media (hover:hover){ 
     .blogPage{
         .myPost{
-            &List{
-                li:hover{
-                    .myPostTop{box-shadow: var(--box-shadow);}
-                    .myPostTitle{color: rgb(var(--accent));}
-                }
-            }
+            &Item:hover{box-shadow: var(--box-shadow);}
         }
     }
 }

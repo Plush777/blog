@@ -1,13 +1,14 @@
 <template>
-   <a :href="`/posts/${postsData.slug}/`" class="myPostLink">
+   <a :href="`/posts/${postSlug}/`" class="myPostLink">
         <div class="myPostTopBox">
-            <slot/>
+            <slot name="top"/>
         </div>
+        <slot name="bottom"/>
     </a>
 </template>
 
 <script setup>
 import { defineProps } from 'vue';
 
-const props = defineProps(['postsData']);
+const props = defineProps(['postSlug']);
 </script>

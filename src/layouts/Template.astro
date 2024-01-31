@@ -1,4 +1,5 @@
 ---
+import TopButton from '../components/TopButton.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Wrapper from './Wrapper.astro';
 import Header from '../components/Header.astro';
@@ -19,10 +20,10 @@ const baseHeadProps = {
 		<BaseHead {...baseHeadProps}/>
 	</head>
 	<body>
-		
 		<Wrapper>
 			<Header />
 			<slot/>
+			<TopButton/>
 			<Footer />
 		</Wrapper>
 		<script is:inline>

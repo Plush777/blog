@@ -1,0 +1,19 @@
+---
+import VuePostBox from './vue/VuePostBox.vue';
+import FormattedDate from './FormattedDate.astro';
+
+const { sectionName, data } = Astro.props;
+---
+
+<section class={sectionName}>
+    <slot/>
+    <ul class="myPostList">
+        {data.map((post) => (
+            <li class="myPostItem">
+                <VuePostBox post={post} client:load>
+                    <FormattedDate date={post.data.pubDate} />
+                </VuePostBox>
+            </li>
+        ))}
+    </ul>
+</section>

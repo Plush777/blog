@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import LayoutTemplate from './LayoutTemplate.astro';
-import Category from "../components/Category.astro";
+import CategoryPostList from "../components/CategoryPostList.astro";
 import countCategory  from "../utils/countCategory";
    
 const posts = await getCollection('blog');
@@ -23,7 +23,7 @@ const categoryLastUrl = url.substring(url.lastIndexOf('/') + 1);
 const decodeCategoryLastUrl = decodeURI(categoryLastUrl);
 ---
 <LayoutTemplate title={`${decodeCategoryLastUrl} 관련글`}>
-    <Category {myCategory} {decodeCategoryLastUrl} {categoryCountStore}>
+    <CategoryPostList {myCategory} {decodeCategoryLastUrl} {categoryCountStore}>
         <slot/>
-    </Category>
+    </CategoryPostList>
 </LayoutTemplate>
