@@ -15,6 +15,7 @@ const {
 	ogType = SITE.ogType,
 	twitterCard = SITE.twitterCard,
 	robots = SITE.robots,
+	url = Astro.url,
 } = Astro.props;
 
 ---
@@ -27,13 +28,13 @@ const {
 <meta name="og:image" content={ogImage} />
 <meta name="og:type" content={ogType} />
 <meta property="og:title" content={title} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={url} />
 
 <meta name="twitter:card" content={twitterCard} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:image" content={ogImage} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:url" content={url} />
 
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
