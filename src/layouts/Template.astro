@@ -30,10 +30,12 @@ const baseHeadProps = {
 		const wrap = document.getElementById('wrap');
 		const pathname = location.pathname;
 
-		if (pathname.includes('posts')) {
+		if (pathname.includes('intro') || pathname.includes('about')){
+			wrap.classList.add('postPage');
+			wrap.classList.add('etc');
+		} else if (pathname.includes('posts')) {
 			wrap.classList.add('postPage');
 		} else {
-			wrap.classList.remove('postPage');
 			wrap.classList.add('blogPage');
 		}
 		</script>

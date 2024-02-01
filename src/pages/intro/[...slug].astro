@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import IntroTemplate from "../../layouts/IntroTemplate.astro";
+
+export async function getStaticPaths() {
+	const intro = await getCollection("intro");
+	return intro.map((intro) => ({
+		params: { slug: intro.slug },
+		props: intro,
+	}));
+} 
+
+const introData = Astro.props;
+const { Content } = await introData.render();
+---
+<IntroTemplate {...introData.data}>
+	<Content/>
+</IntroTemplate>

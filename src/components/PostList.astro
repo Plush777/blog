@@ -7,4 +7,6 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<PostListSection data={posts} />
+<PostListSection data={posts}>
+	<h3 class="categoryTitle">전체</h3>
+</PostListSection>

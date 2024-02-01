@@ -1,20 +1,26 @@
 ---
+import { getCollection } from 'astro:content';
 import Link from './Link.astro';
 import { SITE } from '../consts';
+
+const intro = await getCollection('intro');
+const introSlug = intro.map((item) => item.slug);
+const about = await getCollection('about');
+const aboutSlug = about.map((item) => item.slug);
 ---
 
 <header id="header">
 	<nav class="headerMenuArea">
-		<h2 class="headerLogoBox">
+		<h1 class="headerLogoBox">
 			<a href="/" class="headerLogo">{SITE.name}</a>
-		</h2>
+		</h1>
 
 		<ul class="headerMenuList">
 			<li class="headerMenuItem">
-				<Link href="/intro" className="headerMenuLink" linkType="menuActive">소개</Link>
+				<Link href={`/intro/${introSlug}`} className="headerMenuLink" linkType="menuActive">소개</Link>
 			</li>
 			<li class="headerMenuItem">
-				<Link href="/about" className="headerMenuLink" linkType="menuActive">About</Link>
+				<Link href={`/about/${aboutSlug}`} className="headerMenuLink" linkType="menuActive">About</Link>
 			</li>
 		</ul>
 	</nav>

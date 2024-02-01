@@ -1,0 +1,14 @@
+---
+const { className } = Astro.props;
+---
+
+<article class={`article ${className}`}>
+    <slot name="hero"/>
+
+    <div class="articleContainer">
+        <!-- 작성한 md파일 들어갈 자리 -->
+        <slot />
+        <!-- // -->
+        <slot name="updated"/>
+    </div>
+</article>

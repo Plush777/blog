@@ -1,0 +1,18 @@
+---
+import ArticleContainer from "./ArticleContainer.astro";
+import Hero from "./Hero.astro"
+import VueArticleHero from "./vue/VueArticleHero.vue"
+
+const { title, description } = Astro.props;
+---
+
+<ArticleContainer>
+    <Hero slot="hero">
+        <VueArticleHero client:load/>
+        <h2 class="articleTitle" slot="title">{title}</h2>
+        <p class="articleDesc" slot="desc">{description}</p>
+    </Hero>
+    <!-- md파일 slot -->
+    <slot/>
+    <!-- // -->
+</ArticleContainer>

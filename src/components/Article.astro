@@ -1,27 +1,24 @@
 ---
+import ArticleContainer from './ArticleContainer.astro';
 import VueArticleHero from './vue/VueArticleHero.vue';
+import Hero from './Hero.astro';
 import FormattedDate from './FormattedDate.astro';
 const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
 ---
 
-<article class="article">
-    <div class="heroImgArea">
-        <div class="heroImgInner">
-            <VueArticleHero heroImage={heroImage} title={title} client:load/>
-            <div class="heroImgBox">
-                <div class="articleBox">
-                    <span class="articleCategory">{category}</span>
-                    <h1 class="articleTitle">{title}</h1>
-                    <div class="articleDate">
-                        <FormattedDate date={pubDate} />
-                    </div>
-                </div>
-            </div>
+<ArticleContainer>
+    <Hero slot='hero'>
+        <VueArticleHero heroImage={heroImage} title={title} client:load/>
+        <span class="articleCategory" slot="category">{category}</span>
+        <h2 class="articleTitle" slot="title">{title}</h2>
+        <div class="articleDate" slot="date">
+            <FormattedDate date={pubDate} />
         </div>
-        
-    </div>
-    <div class="articleContainer">
-        <slot />
+    </Hero>
+    <!-- md파일 slot -->
+    <slot/>
+    <!-- // -->
+    <div slot="updated">
         {
             updatedDate && (
                 <div class="articleUpdated">
@@ -30,4 +27,4 @@ const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
             )
         }
     </div>
-</article>
+</ArticleContainer>

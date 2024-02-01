@@ -12,7 +12,8 @@ border-bottom: 1px solid var(--ddd); z-index: 10;
     ul{margin: 0; padding: 0;}
 
     .header{
-        &Logo{font-size: 1.5rem; font-weight: 600; letter-spacing: 0.5px; user-select: none;
+        &Logo{display: flex; align-items: center; height: 100%; font-size: 1.5rem; font-weight: 600; 
+        letter-spacing: 0.5px; user-select: none;
             &Box{display: flex; align-items: center; height: 100%;}
         }
         &Menu{
@@ -70,11 +71,11 @@ background: var(--fff); text-align: center; padding: 0 20px;
     }
 
     .category{
-        &Area{display: flex; flex-direction: column; row-gap: 10px;}
+        &Area{display: flex; flex-direction: column;}
         &List{display: flex; align-items: center; gap: 10px; flex-flow: row wrap; margin-top: 5px;}
         &Item{display: flex; align-items: center; height: 34px; border: 1px solid var(--c000-a1); 
         border-radius: 16px; background-color: var(--fff);}
-        &Title{font-size: 1.25rem;}
+        &Title{font-size: 1.25rem; margin-bottom: 10px;}
         &Link{padding: 0 10px; display: flex; align-items: center; height: 100%; 
         font-size: 1rem; font-weight: 500; color: var(--c333);}
         &FilterSection{
@@ -84,6 +85,10 @@ background: var(--fff); text-align: center; padding: 0 20px;
             .categoryArea{margin-bottom: 40px; text-indent: 2.5px;}
         }
         &Count{font-size: 1rem; color: var(--c666);}
+    }
+
+    &.etc{
+        
     }
 }
 
@@ -102,7 +107,6 @@ background: var(--fff); text-align: center; padding: 0 20px;
 }
 
 .article{
-    h1{margin: 0;}
     &Container{width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: 55px auto; word-break: keep-all;
         h1 {font-size: var(--h1);}
         h2 {font-size: var(--h2);}
@@ -127,9 +131,10 @@ background: var(--fff); text-align: center; padding: 0 20px;
     &Category{font-size: 1rem; color: var(--fff);
         +.articleTitle{margin-top: 5px;}
     }
-    &Title{font-size: 2.5rem; color: var(--fff);
+    &Title{font-size: 2.5rem; color: var(--fff); margin: 0;
         +.articleDate{margin-top: 20px;}
     }
+    &Desc{font-size: 1.125rem; color: var(--fff); margin: 20px 0 0 0; font-weight: 500;}
     &Date{color: var(--fff-a85); font-size: 1.125rem;}
     &Updated{font-style: italic; color: var(--c333);}
     &Box{display: flex; flex-direction: column; justify-content: center; text-align: center; width: 100%; height: 100%;}
