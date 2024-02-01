@@ -8,7 +8,7 @@
 
 #header {position: fixed; width: 100%; height: 60px; background: var(--fff); 
 border-bottom: 1px solid var(--ddd); z-index: 10;
-    :where(h1,h2,h3,h4,h5,h6){margin: 0;}
+    :where(h1,h2,h3,h4){margin: 0;}
     ul{margin: 0; padding: 0;}
 
     .header{
@@ -36,7 +36,7 @@ border-bottom: 1px solid var(--ddd); z-index: 10;
 background: var(--fff); text-align: center; padding: 0 20px;
     ul{margin: 0; padding: 0;}
     li{list-style: none;}
-    a{color: inherit; text-decoration: none;}
+    a{text-decoration: none;}
 }
 
 .footer{
@@ -86,10 +86,6 @@ background: var(--fff); text-align: center; padding: 0 20px;
         }
         &Count{font-size: 1rem; color: var(--c666);}
     }
-
-    &.etc{
-        
-    }
 }
 
 .postPage{
@@ -97,26 +93,31 @@ background: var(--fff); text-align: center; padding: 0 20px;
         &Inner{max-width: none; padding: 60px 0 0 0;}
     }
     #header{
-        a{color: inherit; text-decoration: none;}
+        a{text-decoration: none;}
     }
     .heroImg{
         &Inner{
             .heroImgBackground{padding-top: 0;}
         }
     }
+
+    &.etc{
+        .heroImg{
+            &Area{height: 300px;}
+        }
+    }
 }
 
 .article{
-    &Container{width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: 55px auto; word-break: keep-all;
+    &Container{width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: calc(55px - 40px) auto; word-break: keep-all;
         h1 {font-size: var(--h1);}
         h2 {font-size: var(--h2);}
         h3 {font-size: var(--h3);}
         h4 {font-size: var(--h4);}
-        h5 {font-size: var(--h5);}
-        :where(h1,h2,h3,h4,h5,h6) {margin: 0 0 20px 0; color: rgb(var(--black)); line-height: 1.2;}
+        :where(h1,h2,h3,h4) {margin-top: 40px; margin-bottom: 16px; color: rgb(var(--black)); line-height: 1.2;}
         .astro-code{padding: 20px; margin: 15px 0;}
         li{line-height: 34px;}
-        p {margin-top: 15px; margin-bottom: 40px; line-height: 1.7;}
+        p {margin-top: 15px; margin-bottom: 40px; line-height: 1.7; font-size: var(--paragraph);}
         code {padding: 2px 5px; background-color: rgb(var(--gray-light)); border-radius: 2px;}
         pre {border-radius: 8px;
             > code {all: unset;}
@@ -126,7 +127,6 @@ background: var(--fff); text-align: center; padding: 0 20px;
             th{text-align: left;}
             th,td{line-height: 34px;}
         }
-        a{text-decoration: revert;}
     }
     &Category{font-size: 1rem; color: var(--fff);
         +.articleTitle{margin-top: 5px;}
@@ -161,4 +161,8 @@ background: var(--fff); text-align: center; padding: 0 20px;
 width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--ddd); transition: var(--transition1);
     svg{width: 20px; height: 20px;}
     &.active{opacity: 1; visibility: visible;}
+}
+
+summary{cursor: pointer;
+    +div{margin-top: 60px;}
 }
