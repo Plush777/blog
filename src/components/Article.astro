@@ -3,10 +3,10 @@ import ArticleContainer from './ArticleContainer.astro';
 import VueArticleHero from './vue/VueArticleHero.vue';
 import Hero from './Hero.astro';
 import FormattedDate from './FormattedDate.astro';
-const { title, pubDate, updatedDate, heroImage, category } = Astro.props;
+const { title, pubDate, updatedDate, heroImage, category, headings } = Astro.props;
 ---
 
-<ArticleContainer>
+<ArticleContainer {headings}>
     <Hero slot='hero'>
         <VueArticleHero heroImage={heroImage} title={title} client:load/>
         <span class="articleCategory" slot="category">{category}</span>

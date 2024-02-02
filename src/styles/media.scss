@@ -1,3 +1,11 @@
+@media screen and (max-width: 1500px) {
+    #toc{margin-left: 10px;}
+}
+
+@media screen and (max-width: 1300px) {
+    #toc{display: none;}
+}
+
 @media screen and (max-width: 768px) {
     .main{
         &Inner{padding: 100px 20px 40px 20px;}

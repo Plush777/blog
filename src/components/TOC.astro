@@ -1,0 +1,31 @@
+---
+/* pages > posts > [...slug].astro에서 가져온 headings */
+const { headings } = Astro.props;
+--- 
+
+<aside id="toc" aria-label="목차">
+    <div class="tocInner">
+        <ul class="tocList">
+            {headings.map(h => 
+                <li class={`tocItem tocDepth${h.depth}`}>
+                    <a href={`#${h.slug}`} title={h.text}>{h.text}</a>
+                </li>
+            )}
+        </ul>
+    </div>
+</aside>
+
+<script>
+    const toc = document.getElementById('toc');
+
+    function scrollY() {
+        if (window.scrollY > 400) {
+            toc.classList.add('active');
+        } else {
+            toc.classList.remove('active');
+        }
+    }
+
+    window.addEventListener('scroll', scrollY);
+    window.addEventListener('DOMContentLoaded', scrollY);
+</script>
