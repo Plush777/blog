@@ -2,10 +2,10 @@
 import Intro from "../components/Intro.astro";
 import LayoutTemplate from "./LayoutTemplate.astro";
 
-const { title, description } = Astro.props;
+const { title, description, headings } = Astro.props;
 ---
 <LayoutTemplate {title}>
-    <Intro {title} {description}>
+    <Intro {title} {description} {headings}>
         <slot/>
     </Intro>
 </LayoutTemplate>

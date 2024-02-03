@@ -6,9 +6,9 @@ const { headings } = Astro.props;
 <aside id="toc" aria-label="목차">
     <div class="tocInner">
         <ul class="tocList">
-            {headings.map(h => 
+            {headings?.map(h => 
                 <li class={`tocItem tocDepth${h.depth}`}>
-                    <a href={`#${h.slug}`} title={h.text}>{h.text}</a>
+                    <a class="tocLink" href={`#${h.slug}`} title={h.text}>{h.text}</a>
                 </li>
             )}
         </ul>
@@ -16,16 +16,46 @@ const { headings } = Astro.props;
 </aside>
 
 <script>
-    const toc = document.getElementById('toc');
+    // @ts-nocheck
+    // https://stackoverflow.com/questions/55632954/ignore-all-errors-in-a-typescript-file
 
-    function scrollY() {
-        if (window.scrollY > 400) {
-            toc.classList.add('active');
-        } else {
-            toc.classList.remove('active');
+    const tocInner = document.querySelector('.tocInner');
+    const tocItems = document.querySelectorAll('.tocList, .tocLink');
+    const tags = document.querySelectorAll('.h2, .h3, .h4');
+
+    tocItems.forEach((item,index) => item.dataset.index = index);
+    tags.forEach((tag, index) => tag.dataset.index = index);
+
+    tocInner.addEventListener('click', (e) => {
+        if (e.target.matches('.tocList') || e.target.matches('.tocLink')) {
+            e.preventDefault();
+            const index = e.target.dataset.index;
+            tags[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-    }
+    });
 
-    window.addEventListener('scroll', scrollY);
-    window.addEventListener('DOMContentLoaded', scrollY);
+    let selectedIndex = 0;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.target.outerText === '경력' && entry.boundingClientRect.y < 100) {
+                console.log(entry.boundingClientRect.y);
+            }
+
+            // if (entry.isIntersecting == true && entry.boundingClientRect.y < 500) {
+            //     tocItems[selectedIndex].classList.remove('active')
+            //     selectedIndex = entry.target.dataset.index
+            //     tocItems[selectedIndex].classList.add('active')
+            // }   
+        });
+    },
+    { 
+        threshold: 0,
+        rootMargin: '-60px 0px 0px 0px'
+    }
+    );
+
+   
+
+    tags.forEach(tag => observer.observe(tag));
 </script>

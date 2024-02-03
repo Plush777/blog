@@ -167,9 +167,9 @@ summary{cursor: pointer;
     +div{margin-top: 60px;}
 }
 
-#toc{position: absolute; top: 0; left: 100%; min-width: var(--toc-width); margin-left: 60px; z-index: 100; 
+#toc{position: sticky; top: 95px; z-index: 100; 
     ul{margin: 0; padding: 0;}
-    li{list-style: none; line-height: 26px;}
+    li{list-style: none; line-height: 18px;}
     a{text-decoration: none; line-height: inherit;
         &.active{color: var(--primary1); font-weight: 600;}
     }
@@ -179,13 +179,13 @@ summary{cursor: pointer;
 }
 
 .toc{
-    &Inner{overflow-y: auto; max-width: var(--toc-width); max-height: 700px; border-left: 1px solid var(--c000-a1); 
-    padding-left: 16px;
+    &Inner{position: absolute; left: 100%; overflow-y: auto; min-width: var(--toc-width); max-width: var(--toc-width); 
+    max-height: 700px; border-left: 1px solid var(--c000-a1); padding-left: 16px;
         &::-webkit-scrollbar{width: 6px;}
         &::-webkit-scrollbar-thumb{background-color: var(--c000-a1); border-radius: 20px;}
     }
     &List{display: flex; flex-direction: column;}
-    &Item{margin-bottom: 8px; font-size: .875rem; font-weight: 500;}
+    &Item{margin-bottom: 16px; font-size: .875rem; font-weight: 500;}
     &Depth{
         &1{font-size: 1rem;}
         &2{padding-left: 12px;}

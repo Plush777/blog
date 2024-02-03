@@ -3,6 +3,7 @@
   "compilerOptions": {
     "strictNullChecks": false,
     "checkJs": false,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noEmit": false
   }
 }
