@@ -2,14 +2,18 @@
 import TOC from "./TOC.astro";
 
 const { className = '', headings } = Astro.props;
+
+console.log(Astro.url.pathname)
 ---
 
 <article class={`article ${className}`}>
     <slot name="hero"/>
 
     <div class="articleContainer">
-        <TOC {headings}/>
+        { Astro.url.pathname.includes('posts') && <TOC {headings}/> }
         <div class="articleInner">
+            <slot name="bq"/>
+            <slot name="share"/>
             <!-- 작성한 md파일 들어갈 자리 -->
             <slot />
             <!-- // -->

@@ -26,6 +26,7 @@ const baseHeadProps = {
 			<TopButton/>
 			<Footer />
 		</Wrapper>
+
 		<script is:inline>
 		const wrap = document.getElementById('wrap');
 		const pathname = location.pathname;
@@ -38,15 +39,6 @@ const baseHeadProps = {
 		} else {
 			wrap.classList.add('blogPage');
 		}
-
-		const articleInner = document.querySelector('.articleInner');
-		const h2 = articleInner.querySelectorAll('h2');
-		const h3 = articleInner.querySelectorAll('h3');
-		const h4 = articleInner.querySelectorAll('h4');
-
-		h2.forEach((h2, i) => (h2.setAttribute('class', 'h2')));
-		h3.forEach((h3, i) => (h3.setAttribute('class', 'h3')));
-		h4.forEach((h4, i) => (h4.setAttribute('class', 'h4')));
 		</script>
 	</body>
 </html>

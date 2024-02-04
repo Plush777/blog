@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="shareArea">
+    <p class="shareText">아티클 공유하기</p>
+    <button type="button" id="cr">
+        <span class="hidden">링크 복사</span>
+        <Icon name="mdi:link"/>
+    </button>
+    <button type="button" id="fb">
+        <span class="hidden">페이스북 공유</span>
+        <Icon name="mdi:facebook"/>
+    </button>
+    <button type="button" id="tw">
+        <span class="hidden">트위터 공유</span>
+        <Icon name="mdi:twitter"/>
+    </button>
+</div>
+
+<script>
+    // @ts-nocheck
+    const cr = document.getElementById('cr');
+    const fb = document.getElementById('fb');
+    const tw = document.getElementById('tw');
+   
+    const url = window.location.href;
+    const articleTitle = document.querySelector('.articleTitle').textContent;
+   
+    const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    const twUrl = `https://twitter.com/intent/tweet?text=${articleTitle}&url=${url}`;
+
+    cr.addEventListener('click', () => {
+        navigator.clipboard.writeText(url);
+        alert('링크가 복사되었습니다.');
+    });
+
+    fb.addEventListener('click', () => {
+        window.open(fbUrl, 'fbShare', 'width=600, height=400');
+    });
+
+    tw.addEventListener('click', () => {
+        window.open(twUrl, 'twShare', 'width=600, height=400');
+    });
+</script>

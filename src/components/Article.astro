@@ -3,6 +3,9 @@ import ArticleContainer from './ArticleContainer.astro';
 import VueArticleHero from './vue/VueArticleHero.vue';
 import Hero from './Hero.astro';
 import FormattedDate from './FormattedDate.astro';
+import PostWarning from './PostWarning.astro';
+import PostShare from './PostShare.astro';
+
 const { title, pubDate, updatedDate, heroImage, category, headings } = Astro.props;
 ---
 
@@ -15,6 +18,8 @@ const { title, pubDate, updatedDate, heroImage, category, headings } = Astro.pro
             <FormattedDate date={pubDate} />
         </div>
     </Hero>
+    <PostWarning {title} slot="bq"/>
+    <PostShare slot="share"/>
     <!-- md파일 slot -->
     <slot/>
     <!-- // -->

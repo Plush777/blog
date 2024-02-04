@@ -396,17 +396,10 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.19.11.tgz"
   integrity sha512-vfkhltrjCAb603XaFhqhAF4LGDi2M4OrCRrFusyQ+iTLQ/o60QQXxc9cZC/FFpihBI9N1Grn6SMKVJ4KP7Fuiw==
 
-"@iconify-json/icon-park@^1.1.13":
-  version "1.1.13"
-  resolved "https://registry.npmjs.org/@iconify-json/icon-park/-/icon-park-1.1.13.tgz"
-  integrity sha512-7AoB802JUeMwaJBRz1a+3PGfifxDiMiE+mVgbDPZLHgLaLq7WXslQCV0aDs8kQHF0SGIBUp7f8kKTHGUktuFtw==
-  dependencies:
-    "@iconify/types" "*"
-
-"@iconify-json/majesticons@^1.1.11":
-  version "1.1.11"
-  resolved "https://registry.npmjs.org/@iconify-json/majesticons/-/majesticons-1.1.11.tgz"
-  integrity sha512-8iSktgGbIInt/4y3tvZ/Dyzvzeze/2cc//ZtHMx5zPuHSiENE/nORGZAlO7yGf29oC2oECwl5a7YYqCPChiYiA==
+"@iconify-json/mdi@^1.1.64":
+  version "1.1.64"
+  resolved "https://registry.npmjs.org/@iconify-json/mdi/-/mdi-1.1.64.tgz"
+  integrity sha512-zGeo5TjhNFAY6FmSDBLAzDO811t77r6v/mDi7CAL9w5eXqKez6bIjk8R9AL/RHIeq44ALP4Ozr4lMqFTkHr7ug==
   dependencies:
     "@iconify/types" "*"
 
@@ -898,10 +891,10 @@ astring@^1.8.0:
   resolved "https://registry.npmjs.org/astring/-/astring-1.8.6.tgz"
   integrity sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==
 
-astro-icon@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/astro-icon/-/astro-icon-1.0.4.tgz"
-  integrity sha512-z/9lqZjMldbT4cSmgVQLAiUFq+8yJuxVfHmTMfHOZ1EYq54AMaot9cDxfczLOVo65kz3VwymAD6r2EC5Zp6XrA==
+astro-icon@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/astro-icon/-/astro-icon-1.1.0.tgz"
+  integrity sha512-Nksc09p7UuHeMcPNS9w1pKqRw3+wEmmh0A3FJW+FNXvqaeWI4RLvD1MCWErpY3Z5Cvad317rvLdik/Hg8GEk8Q==
   dependencies:
     "@iconify/tools" "^3.0.1"
     "@iconify/types" "^2.0.0"
