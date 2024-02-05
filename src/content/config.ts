@@ -8,7 +8,8 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
-		category: z.string().optional()
+		category: z.string().optional(),
+		ref: z.array(z.string()).optional(),
 	})
 });
 
@@ -20,7 +21,7 @@ const intro = defineCollection({
 	})
 });
 
-const about = defineCollection({
+const contact = defineCollection({
 	type: 'content',
 	schema: z.object({
 		title: z.string(),
@@ -31,5 +32,5 @@ const about = defineCollection({
 export const collections = { 
 	blog,
 	intro,
-	about
+	contact
 };

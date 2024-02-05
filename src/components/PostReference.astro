@@ -1,0 +1,21 @@
+---
+const { ref } = Astro.props;
+---
+
+<div class="refBox">
+    <div class="refBoxInner">
+        <h3 class="refBoxText" id="reference">Reference</h3>
+
+        <ul class="refList">
+            {
+                ref.map((ref) => {
+                    return (
+                        <li class="refItem">
+                            <a title={ref} href={ref}>{ref}</a>
+                        </li>
+                    )
+                })
+            }
+        </ul>
+    </div>
+</div>

@@ -121,8 +121,21 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
             &Area{
                 svg{width: 22px; height: 22px;}
                 button+button{margin-left: 5px;}
+                +p{margin-top: 0;}
             }
-            &Text{margin: 0 0 10px 0; font-size: 1.125rem; font-weight: 500;}
+            &Text{margin: 0 0 10px 0; font-size: 1.125rem; font-weight: 500; line-height: normal;}
+        }
+
+        .ref{
+            &Box{
+                &Inner{padding: 20px; border: 1px solid var(--ddd); border-radius: 6px; background-color: var(--bg1);}
+                &Text{margin: 0; line-height: normal;}
+            }
+            &List{padding-inline-start: 20px; display: flex; flex-direction: column; row-gap: 5px;}
+            &Item{line-height: normal;
+                a{color: var(--c333); font-weight: 500; display: block; text-overflow: ellipsis; overflow: hidden;
+                white-space: nowrap;}
+            }
         }
         
         h1 {font-size: var(--h1);}
@@ -197,7 +210,7 @@ summary{cursor: pointer;
     &Inner{position: absolute; left: 100%; margin-left: 20px; overflow-y: auto; min-width: var(--toc-width); max-width: var(--toc-width); 
     max-height: 700px; border-left: 1px solid var(--c000-a1); padding-left: 16px;
         &::-webkit-scrollbar{width: 6px;}
-        &::-webkit-scrollbar-thumb{background-color: var(--c000-a1); border-radius: 20px;}
+        &::-webkit-scrollbar-thumb{background-color: var(--c000-a1);}
     }
     &List{display: flex; flex-direction: column;}
     &Item{margin-bottom: 16px; font-size: .875rem; font-weight: 500;}

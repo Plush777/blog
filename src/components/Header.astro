@@ -5,8 +5,8 @@ import { SITE } from '../consts';
 
 const intro = await getCollection('intro');
 const introSlug = intro.map((item) => item.slug);
-const about = await getCollection('about');
-const aboutSlug = about.map((item) => item.slug);
+const contact = await getCollection('contact');
+const contactSlug = contact.map((item) => item.slug);
 ---
 
 <header id="header">
@@ -20,7 +20,7 @@ const aboutSlug = about.map((item) => item.slug);
 				<Link href={`/intro/${introSlug}`} className="headerMenuLink" linkType="menuActive">소개</Link>
 			</li>
 			<li class="headerMenuItem">
-				<Link href={`/about/${aboutSlug}`} className="headerMenuLink" linkType="menuActive">About</Link>
+				<Link href={`/contact/${contactSlug}`} className="headerMenuLink" linkType="menuActive">Contact</Link>
 			</li>
 		</ul>
 	</nav>

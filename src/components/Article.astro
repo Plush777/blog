@@ -5,8 +5,9 @@ import Hero from './Hero.astro';
 import FormattedDate from './FormattedDate.astro';
 import PostWarning from './PostWarning.astro';
 import PostShare from './PostShare.astro';
+import PostReference from './PostReference.astro';
 
-const { title, pubDate, updatedDate, heroImage, category, headings } = Astro.props;
+const { title, pubDate, updatedDate, heroImage, category, headings, ref } = Astro.props;
 ---
 
 <ArticleContainer {headings}>
@@ -23,13 +24,15 @@ const { title, pubDate, updatedDate, heroImage, category, headings } = Astro.pro
     <!-- md파일 slot -->
     <slot/>
     <!-- // -->
-    <div slot="updated">
-        {
-            updatedDate && (
-                <div class="articleUpdated">
-                    마지막 업데이트 : <FormattedDate date={updatedDate} />
-                </div>
-            )
-        }
-    </div>
+    {
+        ref && <PostReference {ref} slot="ref"/>
+    }
+    
+    {
+        updatedDate && (
+            <div class="articleUpdated" slot="updated">
+                마지막 업데이트 : <FormattedDate date={updatedDate} />
+            </div>
+        )
+    }
 </ArticleContainer>

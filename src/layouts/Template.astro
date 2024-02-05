@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Wrapper from './Wrapper.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PathnameScript from '../components/PathnameScript.astro';
 import { SITE } from '../consts';
 
 const { title, description } = Astro.props;
@@ -27,18 +28,6 @@ const baseHeadProps = {
 			<Footer />
 		</Wrapper>
 
-		<script is:inline>
-		const wrap = document.getElementById('wrap');
-		const pathname = location.pathname;
-
-		if (pathname.includes('intro') || pathname.includes('about')){
-			wrap.classList.add('postPage');
-			wrap.classList.add('etc');
-		} else if (pathname.includes('posts')) {
-			wrap.classList.add('postPage');
-		} else {
-			wrap.classList.add('blogPage');
-		}
-		</script>
+		<PathnameScript/>
 	</body>
 </html>
