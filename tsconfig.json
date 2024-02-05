@@ -4,6 +4,12 @@
     "strictNullChecks": false,
     "checkJs": false,
     "jsx": "preserve",
-    "noEmit": false
+    "allowJs": false,
+    "types": [
+      "astro/client",
+      "vite-plugin-pwa/vanillajs",
+      "vite-plugin-pwa/info"
+    ]
   }
 }
+

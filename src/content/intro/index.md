@@ -19,6 +19,7 @@ description: "배운 모든 것을 기록하고 정리하는 블로그입니다.
 ## 학력
 
 - 서울아이티고등학교 스마트 웹 콘텐츠과 졸업 (2021)
+- 산업체 복무 완료 후 사이버대학교 컴공 진학 예정
 
 ## 기술
 
@@ -36,7 +37,7 @@ description: "배운 모든 것을 기록하고 정리하는 블로그입니다.
 - 셀렉터 단순화 (셀렉터가 길어지지 않도록 작성)
 - 셀렉터 선택 시 태그 이름 보단 class 이름으로 선택
 - `:first-child`, `:last-child` 등의 가상 클래스 대신 class를 활용
-- Flex, Grid 
+- Flex / Grid 활용
 - 미디어쿼리를 이용한 반응형 구현
 
 ### SCSS
@@ -44,16 +45,17 @@ description: "배운 모든 것을 기록하고 정리하는 블로그입니다.
 - mixin, function, variable 활용
 
 ### JavaScript
-- getElementById, getElementsByClassName, querySelector 등 DOM API 활용
+- getElementById, getElementsByClassName, querySelector 등의 DOM API 활용
 - Event Listener 활용
+- ES6 문법 (const / let, 템플릿 리터럴, 구조분해할당, Rest 파라미터, 스프레드, 화살표 함수 등)
 - forEach, map, filter 등 배열 메서드 활용
-- Arrow function
 - 접근성 키보드 이벤트 제어
+- 로컬스토리지를 활용한 다크테마 작업
 
 ### jQuery
 - 노드를 찾을 수 있는 메서드 활용 (parent, parents, children, find, 
 closest, siblings, next, prev, nextUntil, prevUntil)
-- 요소를 제어하는 메서드 활용 (append, prepend, after, before, html, text)
+- 요소를 제어하는 메서드를 활용 (append, prepend, after, before, html, text) 하여 CRUD 가능
 - 요소의 속성을 제어하는 메서드 활용 (attr, removeAttr, prop, removeProp, val)
 - 요소의 클래스를 제어하는 메서드 활용 (addClass, removeClass, toggleClass, hasClass)
 - 요소의 순서를 제어하는 메서드 활용 (index, eq, not)
@@ -65,15 +67,15 @@ closest, siblings, next, prev, nextUntil, prevUntil)
 - 로컬스토리지를 활용한 기초 CRUD
 
 ### Next
-- 기존 리액트 프로젝트에서 SEO 이슈가 있어서 Next로 마이그레이션
+- 기존 리액트 프로젝트에서 SEO 이슈가 있어서 Next13 으로 마이그레이션
 
 ### Vue (vue3 script setup)
 - 이벤트핸들러, 라이프사이클, 라우터 활용
 - computed & watch, ref & reactive 차이점 숙지
 - `v-for`, `v-if`, `v-show`, `props`, `slot`, `emit` 등의 vue 문법 숙지
 
-### Astro
-- 추후 추가예정
+### Astro (v4)
+- 상태관리가 딱히 필요없는 정적 웹사이트 (블로그) 를 만들기 위한 도구로 활용
 
 ### Gulp
 - 코드를 일일이 하드코딩 하지않고, gulp로 작업물을 자동화 
@@ -279,3 +281,12 @@ closest, siblings, next, prev, nextUntil, prevUntil)
 ## 자격증
 - 정보처리기능사 (2021.05 취득)
 - 웹 디자인기능사 (2021.09 취득)
+
+## 최근 공부하는 것들
+- 동기/비동기 프로그래밍, 블로킹/논블로킹
+- 자바스크립트 Promise
+- 자바스크립트 Async & Await
+- 자바스크립트 Prototype / Proto
+- 브라우저의 동작과정
+- 프론트엔드 필수 지식 (CSR, SSR, MVP, MVC, CORS 등)
+- 프로그래머스 문제 풀기

@@ -1,11 +1,9 @@
 ---
 import Contact from "../components/Contact.astro";
 import LayoutTemplate from "./LayoutTemplate.astro";
-
-const { title, description } = Astro.props;
 ---
-<LayoutTemplate {title}>
-    <Contact {title} {description}>
+<LayoutTemplate title="Contact">
+    <Contact>
         <slot/>
     </Contact>
 </LayoutTemplate>

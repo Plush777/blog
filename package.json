@@ -11,10 +11,9 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^2.0.6",
-    "@astrojs/rss": "^4.0.3",
+    "@astrojs/rss": "^4.0.4",
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/vue": "^4.0.8",
-    "@iconify-json/mdi": "^1.1.64",
     "@nanostores/vue": "^0.10.0",
     "astro": "^4.2.3",
     "astro-icon": "^1.1.0",
@@ -22,6 +21,9 @@
     "vue": "^3.4.15"
   },
   "devDependencies": {
-    "sass": "^1.70.0"
+    "@vite-pwa/astro": "^0.2.0",
+    "sass": "^1.70.0",
+    "vite-plugin-pwa": "^0.17.5",
+    "workbox-window": "^7.0.0"
   }
 }

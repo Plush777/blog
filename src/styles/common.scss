@@ -28,7 +28,7 @@ border-bottom: 1px solid var(--ddd); z-index: 10;
     }
 }
 
-.main{
+.main{min-height: calc(100vh - 145px);
     &Inner{width: 100%; max-width: var(--mxw768); margin: 0 auto; padding: 132px 0 60px 0;}
 }
 
@@ -99,10 +99,6 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
         &Inner{
             .heroImgBackground{padding-top: 0;}
         }
-    }
-
-    &.etc{
-       
     }
 }
 
@@ -185,11 +181,18 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
     }
 }
 
-.btnTop{opacity: 0; visibility: hidden; display: flex; align-items: center; justify-content: center; 
-width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--ddd); transition: var(--transition1);
-    svg{width: 20px; height: 20px;}
-    &.active{opacity: 1; visibility: visible;}
+.btn{
+    &Area{display: flex; align-items: center; justify-content: flex-end; 
+    margin-right: 20px; margin-bottom: 20px; position: sticky; bottom: 20px;}
+    &Top{opacity: 0; visibility: hidden; display: flex; align-items: center; justify-content: center; 
+    width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--ddd); background-color: var(--fff);
+    transition: var(--transition1);
+        svg{width: 20px; height: 20px;}
+        &.active{opacity: 1; visibility: visible;}
+    }
 }
+
+
 
 summary{cursor: pointer;
     +div{margin-top: 60px;}
