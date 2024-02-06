@@ -2,17 +2,14 @@ import { defineConfig } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import vue from "@astrojs/vue";
-
-import icon from "astro-icon";
 
 // https://astro.build/config
 // https://vite-pwa-org.netlify.app/frameworks/astro.html
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), vue(), icon(), AstroPWA({
+  integrations: [mdx(), sitemap(), AstroPWA({
     mode: 'development',
-    base: '/',
+    base: '/', 
     scope: '/',
     includeAssets: ['favicon.png'],
     registerType: 'autoUpdate',

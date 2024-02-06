@@ -1,14 +1,14 @@
 ---
 import Hero from "./Hero.astro"
 import ArticleContainer from "./ArticleContainer.astro";
-import VueArticleHero from "./vue/VueArticleHero.vue"
+
 
 const { title, description, headings } = Astro.props;
 ---
 
 <ArticleContainer {headings}>
     <Hero slot="hero">
-        <VueArticleHero client:load/>
+        
         <h2 class="articleTitle" slot="title">{title}</h2>
         <p class="articleDesc" slot="desc">{description}</p>
     </Hero>

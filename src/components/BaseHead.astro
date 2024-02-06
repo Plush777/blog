@@ -45,7 +45,7 @@ const {
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <link rel="canonical" href={canonicalURL} />
 
-{ pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 <script src="/src/pwa.ts"></script>
+{ pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 
 <title>{title}</title>

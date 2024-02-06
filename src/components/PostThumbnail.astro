@@ -1,0 +1,10 @@
+---
+const { name } = Astro.props;
+---
+
+<div class="heroImgBackground primary1">
+    <span class="hidden">해당 글은 썸네일이 없습니다.</span>
+    { 
+        name === 'true' && <span class="heroImgBackgroundName">Plush</span>
+    }
+</div>

@@ -1,18 +1,23 @@
 ---
 import ArticleContainer from './ArticleContainer.astro';
-import VueArticleHero from './vue/VueArticleHero.vue';
 import Hero from './Hero.astro';
 import FormattedDate from './FormattedDate.astro';
 import PostWarning from './PostWarning.astro';
 import PostShare from './PostShare.astro';
 import PostReference from './PostReference.astro';
+import PostThumbnail from './PostThumbnail.astro';
 
 const { title, pubDate, updatedDate, heroImage, category, headings, ref } = Astro.props;
 ---
 
 <ArticleContainer {headings}>
     <Hero slot='hero'>
-        <VueArticleHero heroImage={heroImage} title={title} client:load/>
+        {
+            heroImage ? 
+            <img class="heroImgItem" width="1903" height="400" src={heroImage} alt={`${title} 글 썸네일`}/> 
+            :
+            <PostThumbnail name="false"/>
+        }
         <span class="articleCategory" slot="category">{category}</span>
         <h2 class="articleTitle" slot="title">{title}</h2>
         <div class="articleDate" slot="date">

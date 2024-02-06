@@ -23,8 +23,30 @@ const contactSlug = contact.map((item) => item.slug);
 				<Link href={`/contact/${contactSlug}`} className="headerMenuLink" linkType="menuActive">Contact</Link>
 			</li>
 			<li class="headerMenuItem">
-				<button type="button">바로가기 추rr</button>
+				<button type="button" class="btnCommon" id="pwaInstall">바로가기 추가</button>
 			</li>
 		</ul>
 	</nav>
 </header>
+
+<script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredPrompt = event;
+});
+
+const installApp = () => {
+    if (!deferredPrompt) {
+        alert('이미 앱이 설치되어 있거나 앱을 설치할 수 없는 환경입니다');
+        return;
+    }
+
+    deferredPrompt.prompt();
+}
+
+const btn = document.getElementById('pwaInstall');
+
+btn.addEventListener('click', installApp);
+</script>

@@ -1,6 +1,6 @@
 ---
-import VuePostBox from './vue/VuePostBox.vue';
 import FormattedDate from './FormattedDate.astro';
+import PostThumbnail from './PostThumbnail.astro';
 
 const { sectionName, data } = Astro.props;
 ---
@@ -10,9 +10,27 @@ const { sectionName, data } = Astro.props;
     <ul class="myPostList">
         {data.map((post) => (
             <li class="myPostItem">
-                <VuePostBox post={post} client:load>
-                    <FormattedDate date={post.data.pubDate} />
-                </VuePostBox>
+                <a href={`/posts/${post.slug}/`} class="myPostLink">
+                    <div class="myPostTopBox">
+                        {
+                            post.data.heroImage ?
+                            <img class="myPostThumbnail" width="768" height="400" src={post.data.heroImage}
+                            alt={`${post.data.title} 글 썸네일`}/>
+                            :
+                            <PostThumbnail name="true"/>
+                        }
+                    </div>
+                   
+                    <div class="myPostBottom">
+                        <div class="myPostBottomInner">
+                            <h4 class="myPostTitle">{post.data.title}</h4>
+                            <p class="myPostDescription">{post.data.description}</p>
+                        </div>
+                        <p class="myPostDate">
+                            <FormattedDate date={post.data.pubDate} />
+                        </p>
+                    </div>
+                </a>
             </li>
         ))}
     </ul>

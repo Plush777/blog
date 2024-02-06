@@ -1,10 +1,19 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 
+button{font-family: inherit;}
+
 .nanummyeongjo{
     font-family: 'Nanum Myeongjo', serif;
 }
 
 .primary1{background-color: var(--primary1);}
+
+#wrap{
+    .btn{
+        &Common{font-size: .875rem; font-weight: 500; color: #fff; height: 34px; 
+        border-radius: 6px; padding: 0 10px; background-color: var(--primary1);}
+    }
+}
 
 #header {position: fixed; width: 100%; height: 60px; background: var(--fff); 
 border-bottom: 1px solid var(--ddd); z-index: 10;
@@ -191,8 +200,6 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
         &.active{opacity: 1; visibility: visible;}
     }
 }
-
-
 
 summary{cursor: pointer;
     +div{margin-top: 60px;}
