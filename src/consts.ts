@@ -7,6 +7,5 @@ export const SITE = {
     twitterCard: "summary",
     robots: "index,follow",
     github: "https://github.com/Plush777",
-    discord: "https://discord.gg/ewbRavVv",
-    url: "https://plush-tech.netlify.app"
+    discord: "https://discord.gg/ewbRavVv"
 };
