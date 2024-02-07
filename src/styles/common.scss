@@ -77,11 +77,12 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
         &List{display: flex; flex-direction: column; row-gap: 90px;}
         &Item{border-radius: var(--bdrs12); transition: var(--transition1);}
         &Bottom{padding: 16px; border: 1px solid var(--c000-a1); border-top: 0; border-radius: var(--bdrs-bottom12);
+        background-color: var(--fff);
             &Inner{display: flex; flex-direction: column; row-gap: 10px;}
         } 
         &Link{display: flex; flex-direction: column; height: 100%; border-radius: var(--bdrs-top12); overflow: hidden;}
         &TopBox{position: relative; border: 1px solid var(--c000-a1); padding-top: var(--post-height);
-        border-radius: var(--bdrs-top12); background-color: var(--bg1); transition: var(--transition1);}
+        border-radius: var(--bdrs-top12); background-color: var(--fff); transition: var(--transition1);}
         &Title{font-size: 1.75rem; color: rgb(var(--black)); line-height: 1;
         transition: var(--transition1);}
         &Date{font-size: .875rem; margin-top: 20px; color: rgb(var(--gray));}
