@@ -7,8 +7,6 @@ import '../styles/common.scss';
 import '../styles/hover.scss';
 import '../styles/media.scss';
 
-const canonicalURL = new URL(Astro.url.origin, Astro.site);
-
 const { 
 	title = SITE.title, 
 	description = SITE.desc,
@@ -17,6 +15,9 @@ const {
 	twitterCard = SITE.twitterCard,
 	robots = SITE.robots
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(ogImage, Astro.url);
 ---
 
 <meta charset="utf-8" />
@@ -24,14 +25,14 @@ const {
 <meta name="robots" content={robots}>
 <meta name="description" content={description} />
 <meta name="generator" content={Astro.generator} />
-<meta property="og:image" content={`${Astro.url.origin}/${ogImage}`} />
+<meta property="og:image" content={socialImageURL} />
 <meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
 <meta property="og:url" content={Astro.url.origin} />
 
 <meta name="twitter:card" content={twitterCard} />
 <meta name="twitter:title" content={title} />
-<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image" content={socialImageURL} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:url" content={Astro.url.origin} />
 
