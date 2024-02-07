@@ -149,7 +149,7 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
         }
 
         .ref{
-            &Box{
+            &Box{margin-top: 100px;
                 &Inner{padding: 20px; border: 1px solid var(--ddd); border-radius: 6px; background-color: var(--bg1);}
                 &Text{margin: 0; line-height: normal;}
             }
