@@ -2,9 +2,11 @@ import { defineConfig } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
 // https://vite-pwa-org.netlify.app/frameworks/astro.html
+// https://www.freecodecamp.org/news/how-to-add-google-analytics-to-your-astro-website/
 export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), AstroPWA({
@@ -112,5 +114,11 @@ export default defineConfig({
     experimental: {
       directoryAndTrailingSlashHandler: true,
     }
-  }),]
+  }), 
+    partytown({
+      config: {
+        forward: ["dataLayer.push"]
+      }
+    })
+  ]
 });
