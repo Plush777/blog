@@ -11,7 +11,7 @@ const { ref } = Astro.props;
                 ref.map((ref) => {
                     return (
                         <li class="refItem">
-                            <a title={ref} href={ref}>{ref}</a>
+                            <a title={ref} href={ref} target="_blank">{ref}</a>
                         </li>
                     )
                 })

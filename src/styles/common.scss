@@ -114,21 +114,25 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
     .main{
         &Inner{max-width: none; padding: 60px 0 0 0;}
     }
+
     #header{
         a{text-decoration: none;}
     }
+
     .heroImg{
         &Inner{
             .heroImgBackground{padding-top: 0;}
         }
     }
+
+    #footer{background: var(--bg1);}
 }
 
 .article{
     &Container{position: relative; width: 100%; max-width: var(--mxw768); padding: 0 20px; margin: calc(55px + 70px) auto; word-break: keep-all;
         .bq{font-size: 1rem; color: var(--c333); border-left: 0; line-height: 1.7; word-break: keep-all; 
         border-radius: 16px; padding: 24px; background-color: var(--bg1);
-            p{margin: 0;}
+            p{margin: 0; font-size: 1rem;}
 
             +.share{
                 &Area{margin-top: 30px; margin-bottom: 75px;}
@@ -137,11 +141,11 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
 
         .share{
             &Area{
-                svg{width: 22px; height: 22px;}
+                svg{width: 20px; height: 20px;}
                 button+button{margin-left: 5px;}
                 +p{margin-top: 0;}
             }
-            &Text{margin: 0 0 10px 0; font-size: 1.125rem; font-weight: 500; line-height: normal;}
+            &Text{margin: 0 0 10px 0; font-size: 1rem; font-weight: 500; line-height: normal;}
         }
 
         .ref{
@@ -149,10 +153,9 @@ justify-content: center; height: 85px; background: var(--fff); text-align: cente
                 &Inner{padding: 20px; border: 1px solid var(--ddd); border-radius: 6px; background-color: var(--bg1);}
                 &Text{margin: 0; line-height: normal;}
             }
-            &List{padding-inline-start: 20px; display: flex; flex-direction: column; row-gap: 5px;}
+            &List{margin: 0; margin-top: 10px; padding-inline-start: 20px; display: flex; flex-direction: column; row-gap: 5px;}
             &Item{line-height: normal;
-                a{color: var(--c333); font-weight: 500; display: block; text-overflow: ellipsis; overflow: hidden;
-                white-space: nowrap;}
+                a{color: var(--c333); font-weight: 500; word-break: break-all;}
             }
         }
         
