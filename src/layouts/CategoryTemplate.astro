@@ -18,12 +18,20 @@ categoryCountDataFilter.forEach(([key,value]) => (categoryCountStore = value));
 
 // console.log(categoryCountStore);
 
+let myCategoryUrl;
+
 const pathname = Astro.url.pathname;
 const pathSegments = pathname.split('/');
 const categoryLastUrl = pathSegments[pathSegments.length - 1];
-const decodeCategoryLastUrl = decodeURIComponent(categoryLastUrl);
 
-console.log(decodeCategoryLastUrl);
+if (categoryLastUrl === '') {
+    pathSegments.pop();
+    myCategoryUrl = pathSegments[pathSegments.length - 1];
+} else {
+    myCategoryUrl = categoryLastUrl;
+}
+
+const decodeCategoryLastUrl = decodeURIComponent(myCategoryUrl);
 ---
 <LayoutTemplate title={`${decodeCategoryLastUrl} 관련글`}>
     <CategoryPostList {myCategory} {decodeCategoryLastUrl} {categoryCountStore}>
