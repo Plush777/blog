@@ -21,13 +21,13 @@ const baseHeadProps = {
 		<BaseHead {...baseHeadProps}/>
 	</head>
 	<body>
+		<PathnameScript/>
+
 		<Wrapper>
 			<Header />
 			<slot/>
 			<TopButton/>
 			<Footer />
 		</Wrapper>
-
-		<PathnameScript/>
 	</body>
 </html>

@@ -1,12 +1,12 @@
-<script is:inline>
-const wrap = document.getElementById('wrap');
+<script defer is:inline>
+const body = document.body;
 const pathname = location.pathname;
 
 if (pathname.includes('intro') || pathname.includes('contact')){
-    wrap.classList.add('postPage');
+    body.classList.add('postPage');
 } else if (pathname.includes('posts')) {
-    wrap.classList.add('postPage');
+    body.classList.add('postPage');
 } else {
-    wrap.classList.add('blogPage');
+    body.classList.add('blogPage');
 }
 </script>
