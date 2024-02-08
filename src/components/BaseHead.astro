@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import { pwaInfo } from 'virtual:pwa-info';
 import { SITE } from '../consts';
 import '../styles/reset.scss';
@@ -16,35 +17,43 @@ const {
 	robots = SITE.robots
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(ogImage, Astro.url);
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="robots" content={robots}>
-<meta name="description" content={description} />
-<meta name="generator" content={Astro.generator} />
-<meta property="og:image" content={socialImageURL} />
-<meta property="og:type" content={ogType} />
-<meta property="og:title" content={title} />
-<meta property="og:url" content={Astro.url.origin} />
 
-<meta name="twitter:card" content={twitterCard} />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:image" content={socialImageURL} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:url" content={Astro.url.origin} />
-
+<SEO
+	title={title}
+	description={description}
+	openGraph={{
+		basic: {
+			title,
+			type: ogType,
+			image: ogImage,
+			url: "https://plush-tech.netlify.app"
+		},
+		optional: {
+			siteName: title,
+			description,
+			locale: "ko"
+		}
+	}}
+	twitter={{
+		creator: "@Plush",
+		image: ogImage,
+		imageAlt: title,
+		title,
+		description,
+		card: twitterCard
+	}}
+/>
 
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="apple-touch-icon" href="/apple/apple.icon.png">
 <meta name="msapplication-TileColor" content="#FFFFFF">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-<link rel="canonical" href={canonicalURL} />
 
 <script src="/src/pwa.ts"></script>
 { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
-
-<title>{title}</title>
