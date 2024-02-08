@@ -6,6 +6,7 @@ export const SITE = {
     ogType: "website",
     twitterCard: "summary",
     robots: "index,follow",
+    url: "https://plush-blog.netlify.app",
     github: "https://github.com/Plush777",
     discord: "https://discord.gg/ewbRavVv"
 };

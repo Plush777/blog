@@ -14,7 +14,8 @@ const {
 	ogImage = SITE.ogImage,
 	ogType = SITE.ogType,
 	twitterCard = SITE.twitterCard,
-	robots = SITE.robots
+	robots = SITE.robots,
+	url = SITE.url
 } = Astro.props;
 
 ---
@@ -30,8 +31,8 @@ const {
 		basic: {
 			title,
 			type: ogType,
-			image: ogImage,
-			url: "https://plush-tech.netlify.app"
+			image: "https://res.cloudinary.com/dgxluwzaf/image/upload/rvqnvovuqltuqje7ezqj.jpg",
+			url: url
 		},
 		optional: {
 			siteName: title,

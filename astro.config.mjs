@@ -8,7 +8,7 @@ import partytown from '@astrojs/partytown';
 // https://vite-pwa-org.netlify.app/frameworks/astro.html
 // https://www.freecodecamp.org/news/how-to-add-google-analytics-to-your-astro-website/
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://plush-tech.netlify.app/',
   integrations: [mdx(), sitemap(), AstroPWA({
     mode: 'development',
     base: '/', 
