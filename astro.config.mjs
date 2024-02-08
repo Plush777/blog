@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import partytown from '@astrojs/partytown'
+import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 // https://vite-pwa-org.netlify.app/frameworks/astro.html
@@ -99,7 +99,7 @@ export default defineConfig({
     },
     workbox: {
       navigateFallback: '/',
-      globDirectory: "C:/Users/user/Desktop/my-blog/plush-blog/dev-dist",
+      globDirectory: "dist",
       globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
       globIgnores: [
         "**/node_modules/**/*", 
@@ -113,7 +113,7 @@ export default defineConfig({
     },
     experimental: {
       directoryAndTrailingSlashHandler: true,
-    }
+    },
   }), 
     partytown({
       config: {
