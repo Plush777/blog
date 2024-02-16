@@ -12,7 +12,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), AstroPWA({
     mode: 'development',
     base: '/', 
-    scope: '/',
+    scope: '.',
     includeAssets: ['favicon.png'],
     registerType: 'autoUpdate',
     manifest: {

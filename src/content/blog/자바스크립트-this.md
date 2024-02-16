@@ -2,7 +2,7 @@
 title: '자바스크립트 this'
 description: '자바스크립트에서 this는 무엇일까?'
 pubDate: '2024-02-07'
-heroImage: 'https://res.cloudinary.com/dgxluwzaf/image/upload/c4rnqtmrcb84rhjsviqk.jpg'
+heroImage: 'https://myblog-api-kohl.vercel.app/upload/2024_2_15_js.png'
 category: '자바스크립트'
 ref: [
     'https://inpa.tistory.com/entry/JS-📚-this-총정리](https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-this-%EC%B4%9D%EC%A0%95%EB%A6%AC)',
