@@ -17,4 +17,14 @@ export default defineConfig({
       },
     }),
   ],
+  output: 'static',
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: undefined
+        }
+      }
+    }
+  }
 });
