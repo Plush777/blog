@@ -196,6 +196,7 @@ button {
   max-width: var(--mxw768);
   margin: 0 auto;
   padding: 20px 20px 0 20px;
+  border-top: 1px solid var(--ddd);
 }
 
 .giscus {
@@ -350,16 +351,11 @@ button {
 }
 
 .article {
-  &Inner {
-    border-bottom: 1px solid var(--ddd);
-    padding-bottom: 20px;
-  }
-
   &Container {
     position: relative;
     width: 100%;
     max-width: var(--mxw768);
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
     margin: 125px auto 0 auto;
     word-break: keep-all;
 
