@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -16,11 +16,6 @@
     "@astrojs/sitemap": "^3.0.5",
     "astro": "^4.2.3",
     "astro-seo": "^0.8.0",
-    "vite-plugin-pwa": "^0.17.5"
-  },
-  "devDependencies": {
-    "@vite-pwa/astro": "^0.2.0",
-    "sass": "^1.70.0",
-    "workbox-window": "^7.0.0"
+    "sass": "^1.89.1"
   }
 }

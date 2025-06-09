@@ -1,22 +1,22 @@
 ---
-title: '자바스크립트 this'
-description: '자바스크립트에서 this는 무엇일까?'
-pubDate: '2024-02-07'
-heroImage: 'https://myblog-api-kohl.vercel.app/upload/2024_2_15_js.png'
-category: '자바스크립트'
-ref: [
-    'https://inpa.tistory.com/entry/JS-📚-this-총정리](https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-this-%EC%B4%9D%EC%A0%95%EB%A6%AC)',
-    'https://seungtaek-overflow.tistory.com/21',
-    '[https://hanamon.kr/javascript-this란-무엇일까/](https://hanamon.kr/javascript-this%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C/)',
-    https://www.zerocho.com/category/JavaScript/post/5b0645cc7e3e36001bf676eb
-]
+title: "자바스크립트 this"
+isWarning: true
+description: "자바스크립트에서 this는 무엇일까?"
+pubDate: "2024-02-07"
+heroImage: "/images/post/2024/2024_02_07_js.png"
+category: "자바스크립트"
+ref:
+  [
+    "https://inpa.tistory.com/entry/JS-📚-this-총정리](https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-this-%EC%B4%9D%EC%A0%95%EB%A6%AC)",
+    "https://seungtaek-overflow.tistory.com/21",
+    "[https://hanamon.kr/javascript-this란-무엇일까/](https://hanamon.kr/javascript-this%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C/)",
+    https://www.zerocho.com/category/JavaScript/post/5b0645cc7e3e36001bf676eb,
+  ]
 ---
 
 this 자체를 해석하면 ‘이것’ 이라는 뜻입니다.
 
 자바스크립트에서의 this는 자신이 속한 객체 또는 자신이 생성할 인스턴스를 가리키는 **자기 참조 변수** 입니다.
-
-
 
 ## this 출력해보기
 
@@ -29,10 +29,12 @@ this;
 가리키는 대상이 없으면 `this` 는 기본적으로 window 객체를 가리킵니다.
 
 ```js
-var ga = 'Global variable';
+var ga = "Global variable";
 console.log(this.ga); // === window.ga
 
-function a() { console.log(this); };
+function a() {
+  console.log(this);
+}
 a(); // Window {}
 ```
 
@@ -42,7 +44,7 @@ a(); // Window {}
 ## 엄격모드에서의 this
 
 ```js
-'use strict'
+"use strict";
 window.a = 20;
 
 function foo() {
@@ -60,7 +62,9 @@ foo(); // TypeError: Cannot read property 'a' of undefined
 
 ```js
 var obj = {
-  a: function() { console.log(this); },
+  a: function () {
+    console.log(this);
+  },
 };
 obj.a(); // obj
 ```
@@ -98,7 +102,7 @@ a2(); // window
 
 ```js
 function foo() {
-  console.log("foo's this: ",  this);  // window
+  console.log("foo's this: ", this); // window
   function bar() {
     console.log("bar's this: ", this); // window
   }
@@ -114,15 +118,16 @@ var value = 1;
 
 var obj = {
   value: 100,
-  foo: function() {
-    console.log("foo's this: ",  this);  // obj
-    console.log("foo's this.value: ",  this.value); // 100
-    function bar() { /* 내부함수 */
-      console.log("bar's this: ",  this); // window
+  foo: function () {
+    console.log("foo's this: ", this); // obj
+    console.log("foo's this.value: ", this.value); // 100
+    function bar() {
+      /* 내부함수 */
+      console.log("bar's this: ", this); // window
       console.log("bar's this.value: ", this.value); // 1
     }
     bar();
-  }
+  },
 };
 
 obj.foo();
@@ -135,12 +140,12 @@ var value = 1;
 
 var obj = {
   value: 100,
-  foo: function() {
-    setTimeout(function() {  /* 콜백함수 */
-      console.log("callback's this: ",  this);  // window
-      console.log("callback's this.value: ",  this.value); // 1
+  foo: function () {
+    setTimeout(function () {
+      /* 콜백함수 */ console.log("callback's this: ", this); // window
+      console.log("callback's this.value: ", this.value); // 1
     }, 100);
-  }
+  },
 };
 
 obj.foo();
@@ -159,20 +164,20 @@ var value = 1;
 
 var obj = {
   value: 100,
-  foo: function() {
-    var that = this;  // Workaround : this === obj
+  foo: function () {
+    var that = this; // Workaround : this === obj
 
-    console.log("foo's this: ",  this);  // obj
-    console.log("foo's this.value: ",  this.value); // 100
+    console.log("foo's this: ", this); // obj
+    console.log("foo's this.value: ", this.value); // 100
     function bar() {
       //console.log("bar's this: ",  this); // window
-     // console.log("bar's this.value: ", this.value); // 1
+      // console.log("bar's this.value: ", this.value); // 1
 
-      console.log("bar's that: ",  that); // obj
+      console.log("bar's that: ", that); // obj
       console.log("bar's that.value: ", that.value); // 100
     }
     bar();
-  }
+  },
 };
 
 obj.foo();
@@ -186,15 +191,15 @@ obj.foo();
 
 ```js
 var obj1 = {
-  name: 'Lee',
-  sayName: function() {
+  name: "Lee",
+  sayName: function () {
     console.log(this.name); //해당 this는 obj1 을 가리킵니다.
-  }
-}
+  },
+};
 
 var obj2 = {
-  name: 'Kim'
-}
+  name: "Kim",
+};
 
 obj2.sayName = obj1.sayName;
 //obj1의 sayName 메서드를 obj2에 할당합니다.
@@ -217,22 +222,22 @@ function Person(name) {
 }
 
 // (2) Person 객체 프로토타입에 getName 이라는 함수를 정의합니다.
-Person.prototype.getName = function() {
+Person.prototype.getName = function () {
   return this.name;
-}
+};
 
 // (3) 없으면 여기서 찾습니다. 생성자 함수에 인자로 Lee가 들어왔으니 this의 프로퍼티를 찾았습니다!
-var me = new Person('Lee');
-console.log(me.getName()); 
+var me = new Person("Lee");
+console.log(me.getName());
 // Lee
 
 // (4) 프로토타입에서 name 프로퍼티를 찾습니다. 찾았으니 반환합니다.
-Person.prototype.name = 'Kim';
-console.log(Person.prototype.getName()); 
+Person.prototype.name = "Kim";
+console.log(Person.prototype.getName());
 // Kim
 ```
 
-1. 첫번째로 Person 이라는 객체를 만듭니다. 매개변수로 name을 전달합니다. 
+1. 첫번째로 Person 이라는 객체를 만듭니다. 매개변수로 name을 전달합니다.
 
 ⇒ 아직 매개변수로 받은게 없기 때문에, name이라는 프로퍼티는 없는 상태입니다.
 ⇒ 여기에 name 프로퍼티가 없으니 다른 곳에서 찾습니다.
@@ -245,7 +250,7 @@ console.log(Person.prototype.getName());
 1.  new 생성자로 객체를 생성 (실체화) 하여 me 변수에 저장합니다.
 
 ⇒ 인자로 Lee가 들어갔기 때문에, name 프로퍼티는 Lee가 됩니다.
-⇒ 바인딩 된 프로토타입 객체에서 찾다가 없으면, 프로토타입 체인에 의해서 new로 생성 된 객체에서 찾습니다.  여기서 해당 프로퍼티를 찾았기 때문에 Lee를 반환합니다.
+⇒ 바인딩 된 프로토타입 객체에서 찾다가 없으면, 프로토타입 체인에 의해서 new로 생성 된 객체에서 찾습니다. 여기서 해당 프로퍼티를 찾았기 때문에 Lee를 반환합니다.
 
 1. Person 객체 프로토타입에 name이라는 프로퍼티를 직접 추가했습니다.
 
@@ -267,11 +272,11 @@ function Person(name) {
   this.name = name;
 }
 
-var me = new Person('Lee');
+var me = new Person("Lee");
 console.log(me); // Person {name: "Lee"}
 
 // new 연산자와 함께 생성자 함수를 호출하지 않으면 생성자 함수로 동작하지 않는다.
-var you = Person('Kim');
+var you = Person("Kim");
 console.log(you); // undefined
 ```
 
@@ -282,35 +287,35 @@ function Person(name) {
   this.name = name;
 }
 
-var you = new Person('Kim');
+var you = new Person("Kim");
 console.log(you.name); //Kim
 ```
 
 1. Person 함수가 new와 함께 호출되는 순간 새로운 객체가 생성되고, **새로 생성 된 객체가 this로 바인딩** 됩니다.
 2. 그리고 생성된 객체의 name이라는 프로퍼티에 인자로 받아온 Kim 이라는 문자열이 할당되고,
-해당 객체는 you라는 변수에 할당됩니다.
+   해당 객체는 you라는 변수에 할당됩니다.
 3. 출력해보면 Kim이 나옵니다.
 
 ### 5. 콜백 함수 호출
 
 ```jsx
 let userData = {
-    signUp: '2020-10-06 15:00:00',
-    id: 'minidoo',
-    name: 'Not Set',
-    setName: function(firstName, lastName) {
-        this.name = firstName + ' ' + lastName;
-    }
-}
+  signUp: "2020-10-06 15:00:00",
+  id: "minidoo",
+  name: "Not Set",
+  setName: function (firstName, lastName) {
+    this.name = firstName + " " + lastName;
+  },
+};
 
 function getUserName(firstName, lastName, callback) {
-    callback(firstName, lastName);
+  callback(firstName, lastName);
 }
 
-getUserName('PARK', 'MINIDDO', userData.setName);
+getUserName("PARK", "MINIDDO", userData.setName);
 
-console.log('1: ', userData.name); // Not Set
-console.log('2: ', window.name); // PARK MINIDDO
+console.log("1: ", userData.name); // Not Set
+console.log("2: ", window.name); // PARK MINIDDO
 ```
 
 콘솔에 userData의 name 값을 출력해보면, PARK MINIDDO 가 아닌 Not Set이 출력됩니다.
@@ -327,13 +332,13 @@ setName의 this는 전역객체를 가리키게 됩니다.
 
 ```jsx
 function getUserName(firstName, lastName, callback) {
-    callback.call(userData, firstName, lastName);
+  callback.call(userData, firstName, lastName);
 }
 
-getUserName('PARK', 'MINIDDO', userData.setName);
+getUserName("PARK", "MINIDDO", userData.setName);
 
-console.log('1: ', userData.name); // PARK MINIDDO
-console.log('2: ', window.name); // 빈칸. 왜냐하면 변수가 없으니까
+console.log("1: ", userData.name); // PARK MINIDDO
+console.log("2: ", window.name); // 빈칸. 왜냐하면 변수가 없으니까
 ```
 
 ### 6. apply/call/bind 호출
@@ -345,8 +350,8 @@ function Person(name) {
   this.name = name;
 }
 
-Person.prototype.doSomething = function(callback) {
-  if(typeof callback == 'function') {
+Person.prototype.doSomething = function (callback) {
+  if (typeof callback == "function") {
     // --------- 1
     callback();
   }
@@ -356,8 +361,8 @@ function foo() {
   console.log(this.name); // --------- 2
 }
 
-var p = new Person('Lee');
-p.doSomething(foo);  // window name
+var p = new Person("Lee");
+p.doSomething(foo); // window name
 ```
 
 1의 시점에서 this는 Person 객체이지만, 2의 시점에서의 this는 전역 객체를 가리킵니다.
@@ -374,9 +379,9 @@ callback.bind(this)();
 ## 이벤트 리스너
 
 ```jsx
-document.body.onclick = function() {
+document.body.onclick = function () {
   console.log(this); // <body>
-}
+};
 ```
 
 위 코드는 객체 메서드나 생성자 함수도 아닌 일반 함수인데 this를 출력해보면 window가 아닌 `<body>` 가 출력됩니다.
@@ -384,7 +389,7 @@ document.body.onclick = function() {
 이 부분은 이벤트가 발생할 때 **내부적으로 this가 바뀐 것** 입니다.
 
 ```jsx
-$('div').on('click', function() {
+$("div").on("click", function () {
   console.log(this);
 });
 ```
@@ -394,10 +399,10 @@ $('div').on('click', function() {
 내부적으로 함수를 호출할 때 this를 바꿔버렸기 때문에 직접 this를 출력해보면서 해야 합니다.
 
 ```jsx
-$('div').on('click', function() {
+$("div").on("click", function () {
   console.log(this); // <div>
   function inner() {
-    console.log('inner', this); // inner Window
+    console.log("inner", this); // inner Window
   }
   inner();
 });
@@ -412,23 +417,22 @@ inner 함수 안에있는 this는 전역객체 (window) 를 출력합니다.
 이를 해결하려면, this를 변수해 저장하거나 화살표 함수를 써야 합니다.
 
 ```jsx
-$('div').on('click', function() {
+$("div").on("click", function () {
   console.log(this); // <div>
   var that = this; // <-------------------------------------------------------------
   function inner() {
-    console.log('inner', that); // inner <div>
+    console.log("inner", that); // inner <div>
   }
   inner();
 });
 ```
 
 ```jsx
-
-$('div').on('click', function() {
+$("div").on("click", function () {
   console.log(this); // <div>
   const inner = () => {
-    console.log('inner', this); // inner <div>
-  }
+    console.log("inner", this); // inner <div>
+  };
   inner();
 });
 ```
@@ -451,9 +455,9 @@ let ladder = {
     return this;
   },
   showStep() {
-    alert( this.step );
-  }
-}
+    alert(this.step);
+  },
+};
 
 ladder.up().up().down().up().down().showStep(); // 1
 ```

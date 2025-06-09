@@ -1,6 +1,5 @@
 ---
 import { SEO } from "astro-seo";
-import { pwaInfo } from 'virtual:pwa-info';
 import { SITE } from '../consts';
 import '../styles/reset.scss';
 import '../styles/variable.scss';
@@ -31,7 +30,7 @@ const {
 		basic: {
 			title,
 			type: ogType,
-			image: "https://myblog-api-kohl.vercel.app/upload/2024_2_14_og.png",
+			image: "/og.png",
 			url: url
 		},
 		optional: {
@@ -55,6 +54,3 @@ const {
 <meta name="msapplication-TileColor" content="#FFFFFF">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-
-<script src="/src/pwa.ts"></script>
-{ pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
