@@ -14,6 +14,12 @@ export default defineConfig({
     partytown({
       config: {
         forward: ["dataLayer.push"],
+        debug: true,
+        serviceWorker: {
+          cache: false,
+          skipWaiting: true,
+          clientsClaim: true
+        }
       },
     }),
   ],
