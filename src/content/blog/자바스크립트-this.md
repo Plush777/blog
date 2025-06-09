@@ -7,9 +7,9 @@ heroImage: "/images/post/2024/2024_02_07_js.png"
 category: "자바스크립트"
 ref:
   [
-    "https://inpa.tistory.com/entry/JS-📚-this-총정리](https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-this-%EC%B4%9D%EC%A0%95%EB%A6%AC)",
+    "https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-this-%EC%B4%9D%EC%A0%95%EB%A6%AC",
     "https://seungtaek-overflow.tistory.com/21",
-    "[https://hanamon.kr/javascript-this란-무엇일까/](https://hanamon.kr/javascript-this%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C/)",
+    "https://hanamon.kr/javascript-this란-무엇일까/https://hanamon.kr/javascript-this%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C/",
     https://www.zerocho.com/category/JavaScript/post/5b0645cc7e3e36001bf676eb,
   ]
 ---
