@@ -1,7 +1,3 @@
-button {
-  font-family: inherit;
-}
-
 .primary1 {
   background-color: var(--primary1);
 }
@@ -66,7 +62,7 @@ button {
   }
 }
 
-#header {
+#header:not(.heading) {
   display: flex;
   align-items: center;
   position: fixed;
@@ -80,56 +76,59 @@ button {
   :where(h1, h2, h3, h4) {
     margin: 0;
   }
+
   ul {
     margin: 0;
     padding: 0;
   }
 
-  .header {
-    &Logo {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      font-size: 1.5rem;
+  .headerLogo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    user-select: none;
+  }
+
+  .headerLogoBox {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .headerMenuArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: var(--mxw1140);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .headerMenuList {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    column-gap: 20px;
+  }
+
+  .headerMenuItem {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .headerMenuLink {
+    color: var(--black);
+    font-weight: 500;
+
+    &.active {
+      color: var(--primary1);
       font-weight: 600;
-      letter-spacing: 0.5px;
-      user-select: none;
-      &Box {
-        display: flex;
-        align-items: center;
-        height: 100%;
-      }
-    }
-    &Menu {
-      &Area {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
-        width: 100%;
-        max-width: var(--mxw1140);
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      &List {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        column-gap: 20px;
-      }
-      &Item {
-        display: flex;
-        align-items: center;
-        height: 100%;
-      }
-      &Link {
-        color: var(--black);
-        font-weight: 500;
-        &.active {
-          color: var(--primary1);
-          font-weight: 600;
-        }
-      }
     }
   }
 }
@@ -145,7 +144,7 @@ button {
   padding: 132px 0 60px 0;
 }
 
-#footer {
+#footer:not(.heading) {
   position: relative;
   z-index: 110;
   display: flex;
@@ -156,6 +155,7 @@ button {
   background: var(--fff);
   text-align: center;
   padding: 0 20px;
+
   ul {
     margin: 0;
     padding: 0;
@@ -207,125 +207,138 @@ button {
 
 .blogPage {
   background-color: var(--bg1);
-  .myPost {
-    &List {
-      display: flex;
-      flex-direction: column;
-      row-gap: 90px;
-    }
-    &Item {
-      border-radius: var(--bdrs12);
-      transition: var(--transition1);
-    }
-    &Bottom {
-      padding: 16px;
-      border: 1px solid var(--c000-a1);
-      border-top: 0;
-      border-radius: var(--bdrs-bottom12);
-      background-color: var(--fff);
-      &Inner {
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-      }
-    }
-    &Link {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      border-radius: var(--bdrs-top12);
-      overflow: hidden;
-    }
-    &TopBox {
-      position: relative;
-      border: 1px solid var(--c000-a1);
-      padding-top: var(--post-height);
-      border-radius: var(--bdrs-top12);
-      background-color: var(--fff);
-      transition: var(--transition1);
-    }
-    &Title {
-      font-size: 1.75rem;
-      color: rgb(var(--black));
-      line-height: 1;
-      transition: var(--transition1);
-    }
-    &Date {
-      font-size: 0.875rem;
-      margin-top: 20px;
-      color: rgb(var(--gray));
-    }
-    &Description {
-      height: 64px;
-      max-height: 64px;
-      font-size: 1rem;
-      color: var(--c333);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 1.5;
-      word-break: break-word;
-      word-wrap: break-word;
-    }
-    &Thumbnail {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      border-radius: inherit;
+
+  .myPostList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 90px;
+  }
+
+  .myPostItem {
+    border-radius: var(--bdrs12);
+    transition: var(--transition1);
+  }
+
+  .myPostBottom {
+    padding: 16px;
+    border: 1px solid var(--c000-a1);
+    border-top: 0;
+    border-radius: var(--bdrs-bottom12);
+    background-color: var(--fff);
+  }
+
+  .myPostBottomInner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .myPostLink {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: var(--bdrs-top12);
+    overflow: hidden;
+  }
+
+  .myPostTopBox {
+    position: relative;
+    border: 1px solid var(--c000-a1);
+    padding-top: var(--post-height);
+    border-radius: var(--bdrs-top12);
+    background-color: var(--fff);
+    transition: var(--transition1);
+  }
+
+  .myPostTitle {
+    font-size: 1.75rem;
+    color: rgb(var(--black));
+    line-height: 1;
+    transition: var(--transition1);
+  }
+
+  .myPostDate {
+    font-size: 0.875rem;
+    margin-top: 20px;
+    color: rgb(var(--gray));
+  }
+
+  .myPostDescription {
+    height: 64px;
+    max-height: 64px;
+    font-size: 1rem;
+    color: var(--c333);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+
+  .myPostThumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  .categoryArea {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .categoryList {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-flow: row wrap;
+    margin-top: 5px;
+  }
+
+  .categoryItem {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    border: 1px solid var(--c000-a1);
+    border-radius: 16px;
+    background-color: var(--fff);
+  }
+
+  .categoryTitle {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .categoryLink {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--c333);
+  }
+
+  .categoryFilterSection {
+    .categoryArea {
+      margin-bottom: 20px;
     }
   }
 
-  .category {
-    &Area {
-      display: flex;
-      flex-direction: column;
+  .categorySection {
+    .categoryArea {
+      margin-bottom: 40px;
+      text-indent: 2.5px;
     }
-    &List {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-flow: row wrap;
-      margin-top: 5px;
-    }
-    &Item {
-      display: flex;
-      align-items: center;
-      height: 34px;
-      border: 1px solid var(--c000-a1);
-      border-radius: 16px;
-      background-color: var(--fff);
-    }
-    &Title {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-    &Link {
-      padding: 0 10px;
-      display: flex;
-      align-items: center;
-      height: 100%;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--c333);
-    }
-    &FilterSection {
-      .categoryArea {
-        margin-bottom: 20px;
-      }
-    }
-    &Section {
-      .categoryArea {
-        margin-bottom: 40px;
-        text-indent: 2.5px;
-      }
-    }
-    &Count {
-      font-size: 1rem;
-      color: var(--c666);
-    }
+  }
+
+  .categoryCount {
+    font-size: 1rem;
+    color: var(--c666);
   }
 }
 
@@ -347,7 +360,7 @@ button {
     }
   }
 
-  #footer {
+  #footer:not(.heading) {
     background: var(--bg1);
   }
 }
@@ -360,6 +373,13 @@ button {
     padding: 0 20px 20px 20px;
     margin: 125px auto 0 auto;
     word-break: keep-all;
+
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: contain;
+      width: auto;
+    }
 
     .bq {
       font-size: 1rem;
@@ -672,8 +692,31 @@ summary {
 }
 
 .articleVideo {
+  max-width: 100%;
   width: 100%;
   height: 100%;
   border-radius: 8px;
   background-color: #ddd;
+}
+
+.mdImageContainer {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  gap: 8px;
+}
+
+.mdImage {
+  width: 100%;
+  height: 100%;
+}
+
+.mdImage-h-500 {
+  height: 500px;
+}
+
+.mdImageContainer {
+  + img {
+    margin-top: 40px;
+  }
 }
