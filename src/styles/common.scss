@@ -720,3 +720,21 @@ summary {
     margin-top: 40px;
   }
 }
+
+.resultFigure {
+  margin: 0;
+
+  .resultFigureImage {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.resultFigcaption {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.resultArea {
+  user-select: none;
+}

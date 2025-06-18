@@ -93,6 +93,7 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
+  user-select: none;
   border: none;
   display: block;
   width: 100%;
@@ -109,4 +110,9 @@ button {
 }
 a {
   color: inherit;
+}
+
+::selection {
+  color: var(--fff);
+  background-color: var(--primary1);
 }
