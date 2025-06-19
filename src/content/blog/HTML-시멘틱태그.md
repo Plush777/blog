@@ -245,6 +245,26 @@ MDN에서는 사용 시 아래 사항들을 고려해보라고 하고 있습니�
 
 \*클릭과 같은 이벤트를 주려면 웬만해서는 `<div>` 대신 키보드로 포커싱이 가능한 `<button>` 이나 `<a>`와 같은 태그를 사용하는게 좋습니다.
 
+#### 결과
+
+<iframe
+  src="/example/html/div.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
+
+```html
+<div class="button-group">
+  <button>버튼1</button>
+  <button>버튼2</button>
+  <button>버튼3</button>
+  <button>버튼4</button>
+  <button>버튼5</button>
+</div>
+```
+
 ### &lt;span&gt;, &lt;p&gt;, &lt;pre&gt;, &lt;code&gt;
 
 - `<span>` 태그는 phrasing content로, 주로 텍스트 스타일 지정에 사용됩니다.
