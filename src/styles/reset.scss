@@ -100,7 +100,7 @@ img {
   border-radius: 12px;
   object-fit: cover;
 }
-button {
+button:not(.defaultButtons button):not(.articleContainer dialog button) {
   border: 0;
   background-color: transparent;
   cursor: pointer;

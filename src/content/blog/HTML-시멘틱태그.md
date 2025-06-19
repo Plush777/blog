@@ -12,6 +12,15 @@ ref:
     "https://mailchimp.com/resources/html-semantic-elements-and-webflow-the-essential-guide/",
     "https://www.semrush.com/blog/semantic-html5-guide/",
     "https://developer.mozilla.org/en-US/docs/Glossary/Semantics",
+    "https://codingeverybody.kr/html-details-%ED%83%9C%EA%B7%B8/",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details",
+    "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture",
+    "https://codingeverybody.kr/html-picture%EC%99%80-source-%ED%83%9C%EA%B7%B8-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/",
+    "https://flycoding.tistory.com/entry/HTML-picture-%EC%9A%94%EC%86%8C",
+    "https://developer.mozilla.org/ko/docs/Web/HTML/Reference/Elements/ul",
+    "https://developer.mozilla.org/ko/docs/Web/HTML/Reference/Elements/dialog",
+    "https://developer.mozilla.org/ko/docs/Web/HTML/Reference/Elements/menu",
+    "https://usage.tistory.com/180",
   ]
 ---
 
@@ -173,7 +182,15 @@ MDN에서는 사용 시 아래 사항들을 고려해보라고 하고 있습니�
 
 다음은 MDN에서 제공하는 `<section>` 사용 예시입니다.
 
-#### 제목이 있는 경우 `<section>` 사용
+#### 제목이 있는 경우 `<section>`
+
+<iframe
+  src="/example/html/section_heading.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
 
 ```html
 <!-- before -->
@@ -189,7 +206,15 @@ MDN에서는 사용 시 아래 사항들을 고려해보라고 하고 있습니�
 </section>
 ```
 
-#### 제목이 없는 경우 `<section>` 사용
+#### 제목이 없는 경우 `<section>`
+
+<iframe
+  src="/example/html/section_no_heading.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
 
 ```html
 <section>
@@ -240,6 +265,14 @@ MDN에서는 사용 시 아래 사항들을 고려해보라고 하고 있습니�
 
 #### 결과
 
+<iframe
+  src="/example/html/span_p_pre_code.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
+
 ```html
 <!-- span -->
 <p>오늘은 <span style="color: red;">중요한 날</span>입니다.</p>
@@ -256,15 +289,9 @@ function greet() {
 </pre>
 
 <!-- pre + code -->
-<pre>
-  <code>
-    const x = 10;
-    console.log(x);
-  </code>
-</pre>
+<pre><code>const x = 10;
+console.log(x);</code></pre>
 ```
-
-<img src="/images/post/2025/pub/ep2/span_p_pre_code.png" alt=""/>
 
 ### &lt;figure&gt;, &lt;figcaption&gt;
 
@@ -276,19 +303,19 @@ function greet() {
 
 #### 결과
 
+<div class="resultArea">
+  <figure class="resultFigure">
+    <img class="resultFigureImage" src="/images/post/2025/pub/ep2/figure_figcaption_sample_image.jpg" alt=""/>
+    <figcaption class="resultFigcaption">한라산 정상에서 찍은 설경 사진</figcaption>
+  </figure> 
+</div>
+
 ```html
 <figure>
   <img src="hallasan.jpg" alt="한라산 이미지" />
   <figcaption>한라산 정상에서 찍은 설경 사진</figcaption>
 </figure>
 ```
-
-<div class="resultArea">
-  <figure class="resultFigure">
-  <img class="resultFigureImage" src="/images/post/2025/pub/ep2/figure_figcaption_sample_image.jpg" alt=""/>
-  <figcaption class="resultFigcaption">한라산 정상에서 찍은 설경 사진</figcaption>
-</figure>
-</div>
 
 ### &lt;b&gt;, &lt;strong&gt;, &lt;mark&gt;
 
@@ -308,6 +335,14 @@ function greet() {
   - 해당 태그는 문맥을 강조하므로, `<strong>` 태그와는 다른 강조의 의미를 갖습니다. 서로 혼동하지마세요.
 
 #### 결과
+
+<iframe
+  src="/example/html/b_strong_mark.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
 
 ```html
 <!-- 시각적인 강조, 의미 없음 -->
@@ -337,8 +372,6 @@ function greet() {
 </p>
 ```
 
-<img src="/images/post/2025/pub/ep2/b_strong_mark.png" alt=""/>
-
 ### &lt;i&gt;, &lt;em&gt;
 
 이 2개의 태그는 모두 **기울임체** 를 나타내지만, 다른 의미를 가지고 있습니다.
@@ -354,7 +387,13 @@ function greet() {
 
 #### 결과
 
-<img src="/images/post/2025/pub/ep2/i_em_strong.png" alt=""/>
+<iframe
+  src="/example/html/i_em.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
 
 ```html
 <!-- 시각적 스타일만 필요한 경우 -->
@@ -371,14 +410,651 @@ function greet() {
 
 ### &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;
 
+- `<ul>` 태그는 순서에 상관없는 목록을 표현할 때 사용합니다. 주로 메뉴에서 자주 사용되며,
+  ul안에 ul이 들어가는 중첩 구조도 가능합니다.
+
+- `<ol>` 태그는 순서에 상관있는 목록을 표현할 때 사용합니다. breadcrumb와 같이 무언가를 순차적으로 나타내는 콘텐츠에 사용됩니다.
+  ul안에 ol이 들어가는 비정렬 목록 안의 정렬 목록 구조도 가능합니다.
+
+- `<li>` 태그는 목록 안의 항목을 나타냅니다. 목록 태그 (ul, ol, menu) 외에 다른 태그들 안에는 들어갈 수 없습니다.
+
+#### 결과
+
+<iframe
+  src="/example/html/list.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
+
+```html
+<!-- ul li -->
+<nav>
+  <ul>
+    <li>
+      <a href="/menu1">menu1</a>
+      <ul>
+        <li>
+          <a href="/menu1-1">menu1-1</a>
+        </li>
+        <li>
+          <a href="/menu1-2">menu1-2</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="/menu2">menu2</a>
+    </li>
+    <li>
+      <a href="/menu3">menu3</a>
+    </li>
+    <li>
+      <a href="/menu4">menu4</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ol li -->
+<ol>
+  <li>분량의 재료를 준비합니다.</li>
+  <li>신라면을 반정도만 삶아 체에 받쳐둡니다.</li>
+  <li>
+    마늘, 양파, 새우의 순서로 올리브오일 두른 팬에 볶아 주고 후추를 뿌려줍니다.
+  </li>
+  <li>우유를 붓고 버터를 넣어 잘 저으면서 끓여줍니다.</li>
+  <li>
+    신라면 스프를 2/3에서 1개까지 넣어줍니다. 너무 많이 넣을 경우 짤 수 있으니,
+    본인 입맛에 맞게 적당량 넣어주세요. 전 1개 넣었어요~
+  </li>
+  <li>슬라이스 치즈 2장을 넣고 잘 저어줍니다.</li>
+  <li>미리 삶아놓은 면을 소스에 넣고 1분간 잘 섞어줍니다.</li>
+  <li>그릇에 예쁘게 담고 파슬리를 살살 뿌려주면 완성</li>
+</ol>
+
+<ol style="padding: 0; display: flex; align-items:center; column-gap: 8px;">
+  <li style="list-style: none">서울특별시 &gt;</li>
+  <li style="list-style: none">광진구 &gt;</li>
+  <li style="list-style: none">군자동</li>
+</ol>
+
+<ul>
+  <li>first item</li>
+  <li>
+    second item
+    <ol>
+      <li>second item first subitem</li>
+      <li>second item second subitem</li>
+      <li>second item third subitem</li>
+    </ol>
+  </li>
+  <li>third item</li>
+</ul>
+```
+
 ### &lt;picture&gt;
+
+`<picture>` 태그와 `<source>` 태그를 이용하여 여러 개의 반응형 이미지를 제공하는 데 사용됩니다.
+주의해야할 것이, **여러 개의 반응형 이미지를 제공하는 것은 `<source>` 태그이지 picture 태그와는 상관 없다**는 점입니다.
+`<picture>` 태그는 단순히 `<source>`태그를 감싸는 **부모 요소**일 뿐입니다.
+
+### 반응형 이미지 예제
+
+이 예제에서는 source에 media (CSS 미디어쿼리) 속성을 추가해 반응형 이미지를 구현했습니다.
+
+<div class="resultArea">
+  <picture>
+    <source srcset="/images/post/2025/pub/ep2/picture_sample_image_pc.jpg" media="(min-width: 769px)">
+    <source srcset="/images/post/2025/pub/ep2/picture_sample_image_mobile.png" media="(max-width: 768px)">
+    <img src="/images/post/2025/pub/ep2/picture_sample_image_pc.jpg" alt="샘플 이미지">
+  </picture>
+</div>
+
+```html
+<picture>
+  <source
+    srcset="/images/picture_sample_image_pc.jpg"
+    media="(min-width: 769px)"
+  />
+  <source
+    srcset="/images/picture_sample_image_mobile.jpg"
+    media="(max-width: 768px)"
+  />
+
+  <img src="/images/picture_sample_image_pc.jpg" alt="샘플 이미지" />
+</picture>
+```
+
+### 포맷에 따라 다른 이미지 보여주기 예제
+
+이 예제에서는 webp 형식의 이미지를 지원하는 브라우저에서는 webp를 보여주고,
+지원하지 않는 브라우저에서는 jpg를 보여줍니다.
+
+브라우저는 첫번째 `<source>` 요소의 속성 값이 일치하면 그 다음에 오는 `<source>` 요소는 무시하기 때문에
+조건 설정시, 먼저 일치하는 값을 작성해주는게 좋습니다.
+
+아래 코드처럼 크롬 브라우저 기준 다음과 같이 webp를 먼저 작성하면 webp 이미지를 보여주지만
+
+```html
+<source
+  srcset="/images/post/2025/pub/ep2/picture_sample_webp.webp"
+  type="image/webp"
+/>
+<source
+  srcset="/images/post/2025/pub/ep2/picture_sample_jpg.jpg"
+  type="image/jpeg"
+/>
+```
+
+반대로 jpg를 먼저 작성하면 jpg 이미지를 먼저 보여주게 됩니다.
+
+```html
+<source
+  srcset="/images/post/2025/pub/ep2/picture_sample_jpg.jpg"
+  type="image/jpeg"
+/>
+<source
+  srcset="/images/post/2025/pub/ep2/picture_sample_webp.webp"
+  type="image/webp"
+/>
+```
+
+최종 결과는 아래와 같습니다.
+
+<div class="resultArea">
+  <picture>
+    <source srcset="/images/post/2025/pub/ep2/picture_sample_webp.webp" type="image/webp">
+    <source srcset="/images/post/2025/pub/ep2/picture_sample_jpg.jpg" type="image/jpeg">
+    <img src="/images/post/2025/pub/ep2/picture_sample_jpg.jpg" alt="고양이 이미지">
+  </picture>
+</div>
+
+```html
+<picture>
+  <source srcset="/images/picture_sample_webp.webp" type="image/webp" />
+  <source srcset="/images/picture_sample_jpg.jpg" type="image/jpeg" />
+  <img src="/images/picture_sample_jpg.jpg" alt="고양이 이미지" />
+</picture>
+```
 
 ### &lt;details&gt;, &lt;summary&gt;
 
+`<details>` 태그는 접었다 펼칠 수 있는 토글형 UI를 구현하는 데 사용됩니다.
+자바스크립트 없이 HTML 태그만으로 구현할 수 있다는게 특징입니다.
+
+펼쳐지면 `open` 속성이 추가되며, 펼쳐진 상태로 시작하려면 `<details>` 태그에 open 속성을 추가하면 됩니다.
+`details[open]` 선택자를 통해 CSS에서 펼쳐진 상태의 스타일도 설정할 수 있습니다.
+
+`<summary>` 태그는 details 태그의 요약정보 (제목) 를 나타냅니다. summary가 정의되지 않으면 "세부정보" 라는 텍스트를 기본으로 보여줍니다.
+
+#### 기본 예제
+
+<div class="resultArea">
+  <details>
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+```html
+<div class="resultArea">
+  <details>
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+```
+
+#### 펼쳐진 상태에서 시작하는 예제
+
+<div class="resultArea">
+  <details open>
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+```html
+<div class="resultArea">
+  <details open>
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+```
+
+#### name 속성 예제
+
+details 태그에 `name` 속성을 추가 후 같은 값을 설정하면 하나씩만 열리는 아코디언 UI도 구현할 수 있습니다.
+
+<div class="resultArea">
+  <details name="info">
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+<div class="resultArea">
+  <details name="info">
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+<div class="resultArea">
+  <details name="info">
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+```html
+<div class="resultArea">
+  <details name="info">
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+<div class="resultArea">
+  <details name="info">
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+<div class="resultArea">
+  <details name="info">
+    <summary>더보기</summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+```
+
+#### 아이콘 커스텀
+
+CSS를 통해 marker에 접근하여 아이콘 커스텀을 할 수도 있습니다.
+
+<style>
+  .resultDetails {
+    width: fit-content;
+  }
+
+  .resultDetails summary::marker {
+    content: "▶️";
+    font-weight: bold;
+  }
+
+  .resultDetails[open] summary::marker {
+    content: '🔽';
+  }
+
+  .resultDetails summary span {
+    margin-left: 5px;
+  }
+</style>
+
+<div class="resultArea">
+  <details class="resultDetails" style="width: fit-content">
+    <summary class="resultSummary">
+      <span>더보기</span>
+    </summary>
+    <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+  </details>
+</div>
+
+```html
+<style>
+  details summary::marker {
+    content: "▶️";
+    font-weight: bold;
+  }
+
+  details[open] summary::marker {
+    content: "🔽";
+  }
+
+  details summary span {
+    margin-left: 5px;
+  }
+</style>
+
+<details>
+  <summary>
+    <span>더보기</span>
+  </summary>
+  <p>여기에 숨겨진 상세 내용이 있습니다.</p>
+</details>
+```
+
 ### &lt;dialog&gt;
+
+`<dialog>` 태그는 HTML 5.2에서 도입된 태그로, **모달 및 팝업 창을 쉽게 구현**할 수 있습니다.
+또한 접근성 (포커스, 키보드 조작) 까지 고려되었기 때문에 `<div>` 구조로 별도 구현이 필요 없습니다.
+
+#### 기본 예제
+
+간단하게 구현한다면 아래와 같이 할 수 있습니다. `<button>` 태그의 `autofocus` 속성을 추가하여 dialog가 열렸을 때 dialog 닫기 버튼에 포커스가 최우선으로 가도록 설정한 것입니다.
+
+<div class="resultArea">
+  <dialog id="dialogBox">
+    <p>안녕하세요! 이건 모달입니다.</p>
+    <button autofocus onclick="dialogBox.close()">닫기</button>
+  </dialog>
+
+<div class="defaultButtons">
+  <button onclick="dialogBox.showModal()">모달 열기</button>
+</div>
+</div>
+
+```html
+<dialog id="dialogBox">
+  <p>안녕하세요! 이건 모달입니다.</p>
+  <button autofocus onclick="dialogBox.close()">닫기</button>
+</dialog>
+
+<button onclick="dialogBox.showModal()">모달 열기</button>
+```
+
+#### 열려있는 dialog
+
+`<details>` 태그와 마찬가지로, `<dialog>` 태그도 open 속성을 넣으면 처음부터 팝업을 보여줍니다.
+
+<iframe
+  src="/example/html/dialog.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
+
+```html
+<dialog id="dialogBox2" open>
+  <p>안녕하세요! 이건 모달입니다.</p>
+  <button onclick="dialogBox2.close()">닫기</button>
+</dialog>
+```
+
+#### 팝업 뒷 배경 커스텀
+
+CSS에서 `::backdrop` 선택자를 통해 흔히 **dimmed** 라고 불리는 뒷 배경을 커스텀할 수 있습니다.
+
+<style>
+  .resultDialog::backdrop {
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+  }
+</style>
+
+<div class="resultArea">
+  <dialog class="resultDialog" id="dialogBox3">
+    <p>안녕하세요! 이건 모달입니다.</p>
+    <button autofocus onclick="dialogBox3.close()">닫기</button>
+  </dialog>
+
+  <div class="defaultButtons">
+   <button onclick="dialogBox3.showModal()">모달 열기</button>
+  </div>
+</div>
+
+```html
+<style>
+  .resultDialog::backdrop {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+</style>
+
+<dialog class="resultDialog" id="dialogBox3">
+  <p>안녕하세요! 이건 모달입니다.</p>
+  <button autofocus onclick="dialogBox3.close()">닫기</button>
+</dialog>
+
+<button onclick="dialogBox3.showModal()">모달 열기</button>
+```
+
+#### 팝업을 여러 동작으로 닫을 수 있는 방법, closedby (아직 실험 단계)
+
+`closedby` 속성을 사용하여 `<dialog>`를 닫는 방법을 설정할 수 있습니다.
+
+- none (기본 값): 개발자가 지정한 메커니즘으로만 dialog를 닫을 수 있습니다. 즉, ESC나 외부 클릭을 통해 닫히지는 않고 닫기 버튼 클릭을 통해서만 닫을 수 있습니다.
+
+- closerequest: 플랫폼에 따라 닫기 동작을 수행합니다.
+  예를 들어 **데스크톱에서는 ESC키**를 통해 dialog를 닫을 수 있고, 모바일에서는 **갤럭시 스마트폰의 뒤로가기 버튼이나 아이폰의 닫기 제스처**를 통해 dialog를 닫을 수 있습니다.
+
+  dialog 요소에서 제공하는 내장함수인 `showModal()`을 통해 dialog을 열면 **closerequest** 형태로 동작합니다.
+
+- any: none값과 closerequest 값을 합친 속성입니다. ESC (모바일에선 뒤로가기), 외부 클릭, 닫기 버튼 클릭 등의 3가지 방법을 통해 dialog를 닫을 수 있습니다.
+
+> 2025년 6월 19일 기준 dialog closedby 속성은 아직 실험 단계로, 최신 버전의 크롬/엣지/오페라 브라우저 및 안드로이드만 지원합니다. 파이어폭스는 실험적으로 적용할 수 있으며, ios 및 사파리 브라우저는 아직 지원이 되지 않습니다.
+
+<div class="resultArea">
+  <div class="defaultButtons">
+    <button id="none-btn">closedby="none"</button>
+    <button id="closerequest-btn">
+      closedby="closerequest"
+    </button>
+    <button id="any-btn">closedby="any"</button>
+  </div>
+
+  <dialog closedby="none">
+      <p>
+          특정 제공된 메커니즘만을 사용하여 닫을 수 있으며, 이 경우에는 아래 "닫기"
+          버튼을 누르는 것입니다.
+      </p>
+      <button class="close">닫기</button>
+  </dialog>
+
+  <dialog closedby="closerequest">
+      <p>"닫기" 버튼 또는 Esc 키를 사용하여 닫을 수 있습니다.</p>
+      <button class="close">닫기</button>
+  </dialog>
+
+  <dialog closedby="any">
+      <p>
+          "닫기" 버튼, Esc 키 또는 대화 상자 외부를 클릭하여 닫을 수 있습니다. "간편
+          닫기" 동작입니다.
+      </p>
+      <button class="close">닫기</button>
+  </dialog>
+</div>
+
+<script>
+  const noneBtn = document.getElementById("none-btn");
+  const closerequestBtn = document.getElementById("closerequest-btn");
+  const anyBtn = document.getElementById("any-btn");
+
+  const noneDialog = document.querySelector("[closedby='none']");
+  const closerequestDialog = document.querySelector("[closedby='closerequest']");
+  const anyDialog = document.querySelector("[closedby='any']");
+
+  const closeBtns = document.querySelectorAll(".close");
+
+  noneBtn.addEventListener("click", () => {
+    noneDialog.showModal();
+  });
+
+  closerequestBtn.addEventListener("click", () => {
+    closerequestDialog.showModal();
+  });
+
+  anyBtn.addEventListener("click", () => {
+    anyDialog.showModal();
+  });
+
+  closeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.parentElement.close();
+    });
+  });
+</script>
+
+```html
+<div class="defaultButtons">
+  <button id="none-btn">closedby="none"</button>
+  <button id="closerequest-btn">closedby="closerequest"</button>
+  <button id="any-btn">closedby="any"</button>
+</div>
+
+<dialog closedby="none">
+  <p>
+    특정 제공된 메커니즘만을 사용하여 닫을 수 있으며, 이 경우에는 아래 "닫기"
+    버튼을 누르는 것입니다.
+  </p>
+  <button class="close">닫기</button>
+</dialog>
+
+<dialog closedby="closerequest">
+  <p>"닫기" 버튼 또는 Esc 키를 사용하여 닫을 수 있습니다.</p>
+  <button class="close">닫기</button>
+</dialog>
+
+<dialog closedby="any">
+  <p>
+    "닫기" 버튼, Esc 키 또는 대화 상자 외부를 클릭하여 닫을 수 있습니다. "간편
+    닫기" 동작입니다.
+  </p>
+  <button class="close">닫기</button>
+</dialog>
+
+<script>
+  const noneBtn = document.getElementById("none-btn");
+  const closerequestBtn = document.getElementById("closerequest-btn");
+  const anyBtn = document.getElementById("any-btn");
+
+  const noneDialog = document.querySelector("[closedby='none']");
+  const closerequestDialog = document.querySelector(
+    "[closedby='closerequest']"
+  );
+  const anyDialog = document.querySelector("[closedby='any']");
+
+  const closeBtns = document.querySelectorAll(".close");
+
+  noneBtn.addEventListener("click", () => {
+    noneDialog.showModal();
+  });
+
+  closerequestBtn.addEventListener("click", () => {
+    closerequestDialog.showModal();
+  });
+
+  anyBtn.addEventListener("click", () => {
+    anyDialog.showModal();
+  });
+
+  closeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.parentElement.close();
+    });
+  });
+</script>
+```
 
 ### &lt;menu&gt;
 
+`<menu>` 태그는 버튼 그룹이나 메뉴 구조를 나타내기 위해 사용됩니다.
+`<menuitem>` 태그도 있었으나, 현재는 비권장 상태로 대부분의 브라우저에서 지원하지 않게 되었습니다.
+
+따라서, 해당 태그도 거의 안쓰이게 되었습니다.
+
+#### menu li 구조
+
+아래와 같은 구조는 ul li 구조와 동일한 의미를 가집니다.
+
+```html
+<menu>
+  <li><a href="/save">저장</a></li>
+  <li><a href="/delete">삭제</a></li>
+</menu>
+
+<!-- 의미는 ul과 같음 -->
+<ul>
+  <li><a href="/save">저장</a></li>
+  <li><a href="/delete">삭제</a></li>
+</ul>
+```
+
 ### &lt;search&gt;
 
-==== 작성중.. ====
+`<search>` 태그는 검색과 관련된 콘텐츠를 나타내기 위해 사용됩니다.
+꼭 검색 기능이 있지 않아도 검색결과를 필터링하는 콘텐츠에도 사용할 수 있습니다.
+
+> 단, 해당 태그는 **2023년 10월부터 최신 기기 및 브라우저 지원이 시작 된 태그**로 이전 기기나 구버전 브라우저 환경에서는 동작하지 않을 수 있습니다.
+
+#### `<search>` 태그가 생기기 전 예제
+
+`<search>` 태그가 생기기 전에는 `<form>` 태그에 role 속성 (WAI-ARIA) 을 추가하여 사용했었습니다.
+
+```html
+<header>
+  <h1>My Website</h1>
+  <form action="/search" role="search">
+    <input type="search" name="keyword" placeholder="검색..." />
+    <button>🔍</button>
+  </form>
+</header>
+```
+
+#### 기본 예제
+
+<iframe
+  src="/example/html/search.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
+
+```html
+<header>
+  <h1>My Website</h1>
+  <search>
+    <form action="/search">
+      <input type="search" name="keyword" placeholder="검색..." />
+      <button>🔍</button>
+    </form>
+  </search>
+</header>
+```
+
+#### `<search>` 태그가 여러 개 있는 예제
+
+`<search>` 태그는 `<main>` 태그와 다르게 아래처럼 중복으로 여러개 있어도 됩니다.
+
+<iframe
+  src="/example/html/search_more.html"
+  width="100%"
+  height="220"
+  loading="lazy"
+  class="resultIframe"
+></iframe>
+
+```html
+<header>
+  <search>
+    <form class="header-search-form">
+      <input type="search" placeholder="검색어를 입력하세요" />
+    </form>
+  </search>
+</header>
+
+<main>
+  <search>
+    <form class="main-filter-form">
+      <div>
+        <input type="checkbox" id="small" name="small" />
+        <label for="small">작은 사이즈</label>
+      </div>
+      <div>
+        <input type="checkbox" id="middle" name="middle" />
+        <label for="middle">중간 사이즈</label>
+      </div>
+      <div>
+        <input type="checkbox" id="big" name="big" />
+        <label for="big">큰 사이즈</label>
+      </div>
+      <button type="submit">적용</button>
+    </form>
+  </search>
+</main>
+```

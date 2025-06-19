@@ -737,4 +737,13 @@ summary {
 
 .resultArea {
   user-select: none;
+
+  .resultPictureImage {
+    margin: 0;
+  }
+}
+
+.resultIframe {
+  border: 1px solid var(--ddd);
+  border-radius: 8px;
 }
