@@ -1,26 +1,30 @@
+---
+import TopArrow from '@/components/icons/TopArrow.astro';
+---
+
 <div class="btnArea">
-    <button type="button" class="btnTop">
-        <span class="hidden">위로 올라가기</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13 20h-2V8l-5.5 5.5l-1.42-1.42L12 4.16l7.92 7.92l-1.42 1.42L13 8z"/></svg>
-    </button>
+	<button type="button" class="btnTop">
+		<span class="sr-only">위로 올라가기</span>
+		<TopArrow className="size-5" />
+	</button>
 </div>
 
 <script is:inline>
-    //@ts-nocheck
-    const btnTop = document.querySelector('.btnTop');
+	//@ts-nocheck
+	const btnTop = document.querySelector('.btnTop');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            btnTop.classList.add('active');
-        } else {
-            btnTop.classList.remove('active');
-        }
-    });
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 100) {
+			btnTop.classList.add('active');
+		} else {
+			btnTop.classList.remove('active');
+		}
+	});
 
-    btnTop?.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+	btnTop?.addEventListener('click', () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	});
 </script>

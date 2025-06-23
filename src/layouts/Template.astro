@@ -1,11 +1,11 @@
 ---
-import TopButton from '../components/TopButton.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Wrapper from './Wrapper.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import PathnameScript from '../components/PathnameScript.astro';
-import { SITE } from '../consts';
+import TopButton from '@/components/TopButton.astro';
+import BaseHead from '@/components/BaseHead.astro';
+import Wrapper from '@/layouts/Wrapper.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import PathnameScript from '@/components/PathnameScript.astro';
+import { SITE } from '@/consts';
 
 const { title, description } = Astro.props;
 const conditionalTitle = title ? `${title} | ${SITE.title}` : SITE.title;

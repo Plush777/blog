@@ -1,0 +1,5 @@
+@media (hover: hover) {
+  .blogPage .myPostItem:hover {
+    box-shadow: var(--box-shadow);
+  }
+}

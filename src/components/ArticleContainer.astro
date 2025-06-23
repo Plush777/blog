@@ -4,7 +4,7 @@ import TOC from "./TOC.astro";
 const { className = '', headings } = Astro.props;
 ---
 
-<article class={`article ${className}`}>
+<article class={`article max-[1300px]:m-[60px_auto] ${className}`}>
     <slot name="hero"/>
 
     <div class="articleContainer">
