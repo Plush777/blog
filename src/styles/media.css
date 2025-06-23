@@ -109,4 +109,8 @@
 	.blogPage .myPostTitle {
 		font-size: 1.25rem;
 	}
+
+	.resultArea dialog {
+		max-width: calc(100vw - 40px);
+	}
 }
