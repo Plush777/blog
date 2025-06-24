@@ -1,0 +1,7 @@
+.postPage .heroImgInner .heroImgBackground {
+	padding-top: 0;
+}
+
+.postPage #footer:not(.heading) {
+	background: var(--bg1);
+}

@@ -1,15 +1,19 @@
 ---
-import { SEO } from "astro-seo";
+import { SEO } from 'astro-seo';
 import { SITE } from '../consts';
 import '../styles/reset.css';
 import '../styles/variable.css';
-import '../styles/common.css';
+import '../styles/component.css';
 import '../styles/hover.css';
 import '../styles/media.css';
-import "../styles/global.css";
+import '../styles/global.css';
+import '../styles/markdown.css';
+import '../styles/layout.css';
+import '../styles/postPage.css';
+import '../styles/blogPage.css';
 
-const { 
-	title = SITE.title, 
+const {
+	title = SITE.title,
 	description = SITE.desc,
 	ogImage = SITE.ogImage,
 	ogType = SITE.ogType,
@@ -17,12 +21,11 @@ const {
 	robots = SITE.robots,
 	url = SITE.url
 } = Astro.props;
-
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="robots" content={robots}>
+<meta name="robots" content={robots} />
 
 <SEO
 	title={title}
@@ -31,17 +34,17 @@ const {
 		basic: {
 			title,
 			type: ogType,
-			image: "/og.png",
+			image: '/og.png',
 			url: url
 		},
 		optional: {
 			siteName: title,
 			description,
-			locale: "ko"
+			locale: 'ko'
 		}
 	}}
 	twitter={{
-		creator: "@Plush",
+		creator: '@Plush',
 		image: ogImage,
 		imageAlt: title,
 		title,
@@ -51,9 +54,9 @@ const {
 />
 
 <link rel="icon" type="image/png" href="/favicon.png" />
-<link rel="apple-touch-icon" href="/apple/apple.icon.png">
-<meta name="msapplication-TileColor" content="#FFFFFF">
-<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" href="/apple/apple.icon.png" />
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="theme-color" content="#ffffff" />
 <link
 	rel="stylesheet"
 	as="style"
