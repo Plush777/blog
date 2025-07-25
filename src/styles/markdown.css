@@ -24,6 +24,12 @@
 	border-image: initial !important;
 }
 
+.articleContainer figcaption {
+	text-align: center;
+	font-size: 14px;
+	color: var(--c666);
+}
+
 .articleContainer img {
 	max-width: 100%;
 	margin: 0 auto;
@@ -76,6 +82,10 @@
 	margin: 15px 0;
 }
 
+.articleContainer ol li {
+	list-style-type: decimal;
+}
+
 .articleContainer li {
 	line-height: 34px;
 	list-style: disc;
@@ -114,7 +124,7 @@
 	width: 100%;
 }
 
-.articleContainer table th {
+.articleContainer table th:not([align]) {
 	text-align: left;
 }
 
