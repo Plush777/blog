@@ -222,3 +222,7 @@
 	width: 100%;
 	max-width: 375px;
 }
+
+.articleDesc {
+	color: var(--color-white);
+}

@@ -1,18 +1,18 @@
 ---
-title: "소개"
-description: "배운 모든 것을 기록하고 정리하는 블로그입니다."
+title: '소개'
+description: '배운 모든 것을 기록하고 정리하는 블로그입니다.'
 ---
 
 ## 경력
 
-### <a href="http://www.ifcommunity.co.kr/" target="_blank">이프커뮤니티 | 웹 퍼블리셔</a>
+- 이프커뮤니티 (2020.11.02 ~ NOW)
 
-#### 담당 업무
+#### 담당업무
 
-- HTML5, SCSS, JavaScript를 이용한 웹 퍼블리싱
-- 웹 표준과 접근성, 호환성을 준수한 마크업 및 시멘틱 마크업
-- 소개 페이지 또는 GIS (지리정보시스템) 페이지 퍼블리싱
-- Vue, Astro, Svelte + tailwind CSS 환경 퍼블리싱
+- HTML5, CSS 및 SCSS, JavaScript를 이용한 웹 퍼블리싱
+- 웹 표준과 접근성 및 호환성 (크로스 브라우징) 을 준수한 마크업 및 시멘틱 마크업
+- 소개 페이지, 어드민 시스템 또는 GIS (지리정보시스템) 퍼블리싱
+- 여러 프론트엔드 프레임워크 (Vue, Svelte, Astro) 환경에서의 퍼블리싱
 
 ## 학력
 
@@ -24,82 +24,72 @@ description: "배운 모든 것을 기록하고 정리하는 블로그입니다.
 
 ### HTML5
 
-- 시멘틱 마크업
-- 웹 표준 / 접근성 / 호환성 준수 및 WAI-ARIA 활용
-- meta 태그 및 Open Graph 활용
+- 시멘틱 마크업을 최대한 활용합니다.
+  - `div` 대신 `header`, `nav`, `main`, `section`, `article`, `aside`, `details`, `figure`, `picture` 등의 다양한 시멘틱 태그를 활용하여 가독성 및 SEO 점수를 높입니다.
+- 웹 표준 / 접근성 / 호환성 (크로스 브라우징) 준수 및 WAI-ARIA 활용
+  - 웹 표준과 접근성을 고려하여 작업합니다.
+  - 크롬, 엣지, 파이어폭스, 네이버웨일 등 여러 브라우저에서도 동일한 화면이 보이도록 작업합니다.
+  - 필요 시 스크린 리더기에 추가적인 정보를 부여할 수 있는 WAI-ARIA 속성을 활용합니다.
 
-### CSS3
+### CSS3 & SCSS
 
-- id 대신 class 활용
+- id 대신 class 사용
+  - id는 우선순위가 class보다 높기 때문에, 최대한 class만을 사용합니다.
 - `!important` 는 최대한 지양
-- 사이즈 적용 시 고정값 `(px)` 대신 `%`, `rem` 등의 상대값 사용
-- 컬러 값 적용 시 컬러 이름 (red,white) 대신 명확한 `rgb` / `hex code`를 사용
-- 중복되는 코드는 css 변수로 관리 하거나 SCSS Mixin으로 관리
-- 셀렉터 단순화 (셀렉터가 길어지지 않도록 작성)
-- 셀렉터 선택 시 태그 이름 보단 class 이름으로 선택
-- `:first-child`, `:last-child` 등의 가상 클래스 대신 class를 활용
-- Flex / Grid 활용
+  - Bootstrap 같은 UI 프레임워크를 커스텀하거나, 선택자가 길어져 우선순위가 꼬여 불가피하게 써야하는 경우 제외하곤 최대한 쓰지 않습니다.
+- 고정값 `(px)` 대신 `%`, `rem`, `vw`, `vh` 등의 상대 단위 사용
+  - 상대 단위를 사용하여 요소가 짤려보이거나 하는 상황을 방지합니다.
+- 컬러 이름 (red,white) 대신 `rgb` / `hex code`를 사용
+  - 컬러 적용 시 정확한 색상을 알 수 없는 애매한 컬러 이름보다는 색상 수치를 정확하게 알 수 있는 rgb 혹은 hex code (#fff, #333 등) 를 사용합니다.
+- 색상은 css 변수로 관리 하고, 재사용될 코드는 SCSS Mixin으로 관리
+  - 자주 쓰이는 색상들을 CSS 변수로 관리하여 색상을 일일이 수정하는 상황을 방지합니다.
+  - SCSS를 사용할 경우, Mixin을 활용하여 코드 중복을 방지합니다.
+- 셀렉터 최대한 단순화
+  - BEM과 같은 방법론을 사용하여 셀렉터가 계속 길어지는 것을 방지합니다.
+- 셀렉터 선택 시 태그 이름 보단 class 로 선택
+  - 추후에 HTML 태그가 바뀔 것을 대비하여 태그 이름보다는 class로 선택합니다.
+- Flex 및 Grid 활용
+  - Flex와 Grid Layout을 활용하여 유연하고 효율적인 레이아웃을 구성합니다.
 - 미디어쿼리를 이용한 반응형 구현
-
-### SCSS
-
-- 부모 선택자 (&) 활용
-- mixin, function, variable 활용
 
 ### JavaScript
 
-- getElementById, getElementsByClassName, querySelector 등의 DOM API 활용
-- Event Listener 활용
-- ES6 문법 (const / let, 템플릿 리터럴, 구조분해할당, Rest 파라미터, 스프레드, 화살표 함수 등)
-- forEach, map, filter 등 배열 메서드 활용
-- 접근성 키보드 이벤트 제어
-- 로컬스토리지를 활용한 다크테마 작업
+- ES6 문법을 활용하여 동적인 ui를 구현할 수 있습니다.
 
 ### jQuery
 
-- 노드를 찾을 수 있는 메서드 활용 (parent, parents, children, find,
-  closest, siblings, next, prev, nextUntil, prevUntil)
-- 요소를 제어하는 메서드를 활용 (append, prepend, after, before, html, text) 하여 CRUD 가능
-- 요소의 속성을 제어하는 메서드 활용 (attr, removeAttr, prop, removeProp, val)
-- 요소의 클래스를 제어하는 메서드 활용 (addClass, removeClass, toggleClass, hasClass)
-- 요소의 순서를 제어하는 메서드 활용 (index, eq, not)
+- jQuery 문법을 활용하여 코드를 간단하고, 효율적으로 작성할 수 있습니다.
 
-### React
+### React / Vue3 / Svelte
 
-- useState, useEffect, useRef 등의 훅 활용
-- 중복되는 코드는 커스텀 훅으로 관리
-- Styled-components, react-spring, Axios, loadsh, react-responsive, Redux Toolkit 등의 라이브러리 활용
-- 로컬스토리지를 활용한 기초 CRUD
+- 여러 프론트엔드 프레임워크들의 기본 문법을 숙지하고 있으며 컴포넌트로 각 요소를 나누고, api를 활용하여 데이터를 동적으로 보여주거나 mock data를 구성하여 실제 데이터를 다루는 것처럼 작업할 수 있습니다.
 
-### Next
+<!-- ### Next
 
-- 기존 리액트 프로젝트에서 SEO 이슈가 있어서 Next13 으로 마이그레이션
+- 기존 리액트 프로젝트에서 SEO 이슈가 있어서 Next13 으로 마이그레이션 -->
 
-### Vue (vue3 script setup)
+### Astro
 
-- 이벤트핸들러, 라이프사이클, 라우터 활용
-- computed & watch, ref & reactive 차이점 숙지
-- `v-for`, `v-if`, `v-show`, `props`, `slot`, `emit` 등의 vue 문법 숙지
-
-### Astro (v4)
-
-- 상태관리가 딱히 필요없는 정적 웹사이트 (블로그) 를 만들기 위한 도구로 활용
+- 상태관리가 크게 필요없는 블로그 같은 정적인 웹 사이트를 만들기 위해 사용한 경험이 있습니다.
+- 개인 프로젝트로 Astro와 Vue를 혼합하여 사용해본 경험이 있습니다.
 
 ### Gulp
 
-- 코드를 일일이 하드코딩 하지않고, gulp로 작업물을 자동화
-  (공통파일 관리, scss 컴파일, css prefix, browser-sync 등)
+- SPA 환경이 아닌 일반 HTML에서 반복문이나 컴포넌트 (include), SCSS 등을 사용할 수 있는 개발 환경을 구축하여 코딩을 효율적으로 할 수 있습니다.
 
 ### Git
 
-- Git으로 버전관리 및 협업
-- commit, push, pull, merge, webhook 활용
+- Git을 통한 프로젝트 버전관리 및 협업을 할 수 있습니다.
 
 ### Figma
 
-- Auto Layout, 컴포넌트 기능을 활용한 웹 페이지 디자인 가능
+- 오토 레이아웃, 컴포넌트 등의 기본적인 피그마 기능을 숙지하여 간단한 웹 페이지 디자인을 할 수 있습니다.
 
-## 자격증
+### Netlify / Vercel
+
+- 서버리스 플랫폼을 통해 개발한 웹을 배포할 수 있습니다.
+
+### 자격증
 
 - 정보처리기능사 (2021.05 취득)
 - 웹 디자인기능사 (2021.09 취득)
